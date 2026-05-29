@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors */
+  --background-primary: #ffffff;
+  --background-secondary: #C1121F;
+
+  --text-primary: #ffffff;
+  --text-secondary: #5F5F5F;
+  --text-red: #C1121F;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global styles */
+body {
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font-family: "Cormorant Garamond", cursive, serif;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Paragraphs */
+p,
+span,
+li,
+a,
+button,
+input,
+textarea {
+  font-family: "Cormorant Garamond", cursive, serif;
+}
+
+/* Selection */
+::selection {
+  background: var(--background-secondary);
+  color: white;
+}
+
+/* Hide scrollbar */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 25s linear infinite;
+}
+
+@keyframes reverseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-reverse-spin {
+  animation: reverseSpin 25s linear infinite;
+}
+

@@ -1,0 +1,7 @@
+export {default as Header} from "./Header/Header"
+export {default as Footer} from "./Footer/Footer"
+export {default as ServiceCard} from "./ServiceCard/ServiceCard"
+export {default as FloatingWhatsApp} from "./FloatingWhatsApp/FloatingWhatsApp"
+export {default as AboutCard} from "./AboutCard/AboutCard"
+export {default as CTA} from "./CTA.jsx"
+export {default as StatsRow} from "./StatsRow.jsx"
