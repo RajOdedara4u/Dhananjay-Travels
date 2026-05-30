@@ -71,7 +71,7 @@ function StatItem({ num, label }) {
 // ── Hero ───────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   return (
-    <div className="min-h-screen overflow-hidden relative ">
+    <div className="h-[90vh] md:h-[100vh]  overflow-hidden relative ">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"
