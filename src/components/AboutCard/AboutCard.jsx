@@ -12,7 +12,7 @@ const highlights = [
 
 export default function AboutCard() {
   return (
-    <section className="px-4 py-14">
+    <section className="px-6 py-14">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="flex flex-col md:flex-row items-center gap-12"
@@ -23,14 +23,13 @@ export default function AboutCard() {
         >
           {/* Left — text */}
           <div className="flex-1">
-
             {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, y: -16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#C1121F]/10 border border-[#C1121F]/20 text-black/80 text-xs font-bold tracking-widest px-4 py-2 rounded-full"
+              className="inline-flex items-center gap-2 bg-[#C1121F]/10 border border-[#C1121F]/20 text-[var(--text-secondary)] text-xs font-bold tracking-widest px-4 py-2 rounded-full"
             >
               <Sparkles size={12} />
               Who We Are

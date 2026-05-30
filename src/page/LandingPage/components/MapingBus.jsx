@@ -66,10 +66,6 @@ export default function MapingBus() {
 
         {/* SEAT NAVIGATION */}
         <div className="flex items-center justify-center gap-1 md:gap-4 flex-wrap">
-          <button className="text-red-600">
-            <ArrowLeft size={16} strokeWidth={1.5} />
-          </button>
-
           {buses.map((bus) => (
             <button
               key={bus.id}
@@ -83,10 +79,6 @@ export default function MapingBus() {
               {bus.seats} seat
             </button>
           ))}
-
-          <button className="text-red-600">
-            <ArrowRight size={16} strokeWidth={1.5} />
-          </button>
         </div>
 
         {/* GRID */}

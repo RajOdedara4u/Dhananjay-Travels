@@ -98,58 +98,70 @@ export default function Crousel() {
       {/* decorative blobs */}
 
       {/* heading */}
-         <div className="pb-7" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 0, position: "relative" }}>
+       <div className="relative flex flex-col items-center text-center gap-0 pb-7">
+  <DotGrid />
 
-          <DotGrid />
+  {/* Label */}
+  <div className="flex items-center gap-2 mb-0 pb-2 md:pb-0">
+    <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
+    <span className="z-10 text-[10px] font-bold uppercase tracking-[0.32em] text-[#C1121F]">
+      Trusted By
+    </span>
+    <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
+  </div>
 
-          {/* Label */}
-          <div className="pb-2 md:pb-0" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 0 }}>
-            <span style={{ width: 24, height: 1.5, background: "#C1121F", borderRadius: 2, display: "inline-block" }} />
-            <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.32em", textTransform: "uppercase", color: "#C1121F" }} className="z-10">
-              Trusted By
-            </span>
-            <span style={{ width: 24, height: 1.5, background: "#C1121F", borderRadius: 2, display: "inline-block" }} />
-          </div>
+  {/* Heading */}
+  <div className="relative flex items-center justify-center gap-3">
+    <img
+      src="/leftWing.png"
+      alt=""
+      aria-hidden="true"
+      className="absolute right-[90%] invisible sm:visible size-45 p-2 object-contain"
+    />
 
-          {/* Heading with wing images */}
-          <div  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }} >
-            <img src="/leftWing.png" alt="" aria-hidden="true"
-              style={{  objectFit: "contain" }}
-               className="size-45 p-2 absolute right-[90%] invisible sm:visible" /> 
+    <h2
+      className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
+      style={{
+        fontSize: "clamp(22px, 4vw, 34px)",
+        fontFamily: "'Cormorant Garamond', Georgia, serif",
+      }}
+    >
+      Brands That{" "}
+      <span className="relative inline-block text-[#C1121F]">
+        Trust Us
+        <svg
+          className="absolute left-0 bottom-[-3px] h-[7px] w-full"
+          viewBox="0 0 120 8"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,6 Q30,0 60,5 Q90,10 120,3"
+            stroke="#C1121F"
+            strokeWidth="2.5"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+    </h2>
 
-            <h2 style={{
-              fontSize: "clamp(22px, 4vw, 34px)",
-              fontWeight: 900, color: "#111",
-              lineHeight: 1.2, letterSpacing: "-0.01em",
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              whiteSpace: "nowrap",
-            }} 
-            className="z-10"
-            >
-              Brands That{" "}
-              <span style={{ position: "relative", display: "inline-block", color: "#C1121F" }}>
-                Trust Us
-                <svg style={{ position: "absolute", bottom: -3, left: 0, width: "100%", height: 7 }}
-                  viewBox="0 0 120 8" preserveAspectRatio="none">
-                  <path d="M0,6 Q30,0 60,5 Q90,10 120,3" stroke="#C1121F" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>
-            </h2>
+    <img
+      src="/rightWing.png"
+      alt=""
+      aria-hidden="true"
+      className="absolute left-[90%] invisible sm:visible size-45 p-2 object-contain"
+    />
+  </div>
 
-            <img src="/rightWing.png" alt="" aria-hidden="true"
-              style={{objectFit: "contain" }}
-              className="size-45 p-2 absolute left-[90%] invisible sm:visible" />
-          </div>
-
-          {/* Sub text */}
-          <p style={{ fontSize: 13, color: "#5F5F5F", lineHeight: 1.6, maxWidth: 380, marginTop: 8 }}
-          className="z-10 px-2"
-          >
-            Leading companies trust{" "}
-            <span style={{ color: "#C1121F", fontWeight: 600 }}>Dhananjay Travels</span>
-            {" "}for corporate & group tours across India.
-          </p>
-        </div>
+  {/* Description */}
+  <p className="z-10 mt-2 max-w-[380px] px-3 text-[13px] leading-[1.6] text-[#5F5F5F]">
+    Leading companies trust{" "}
+    <span className="font-semibold text-[#C1121F]">
+      Dhananjay Travels
+    </span>{" "}
+    for corporate &amp; group tours across India.
+  </p>
+</div>
 
       {/* SPINNING WHEEL */}
       <div
@@ -191,7 +203,7 @@ export default function Crousel() {
                 <img
                   src={client.src}
                   alt={client.alt}
-                  className="sm:max-w-[112px] sm:max-h-[80px] max-w-[72px] max-h-[40px] object-contain animate-reverse-spin "
+                  className="sm:max-w-[112px] rounded-full sm:max-h-[80px] max-w-[72px] max-h-[40px] object-contain animate-reverse-spin "
                   style={{ transform: `rotate(${rotateDeg}deg)` }}
                 />
               </div>

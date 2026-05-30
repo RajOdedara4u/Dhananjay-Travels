@@ -89,7 +89,7 @@ const services = [
 
 export default function ServiceSeaction() {
   return (
-    <section className="relative md:py-10 px-4 overflow-hidden ">
+    <section className="relative py-10 px-4 overflow-hidden ">
       <div className="relative max-w-6xl mx-auto">
 
         {/* heading */}
@@ -100,19 +100,38 @@ export default function ServiceSeaction() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <span className="inline-block text-[var(--text-red)] text-xs font-bold uppercase tracking-[0.35em] mb-3">
-            What We Offer
-          </span>
-          <h2 className="text-black text-3xl sm:text-4xl font-black leading-tight">
-            Services Built for{" "}
-            <span className="relative inline-block text-[var(--text-red)]">
-              Every Journey
-              <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 180 8" preserveAspectRatio="none" style={{ height: "7px" }}>
-                <path d="M0,6 Q45,0 90,5 Q135,10 180,3" stroke="#C1121F" strokeWidth="3" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
-          </h2>
-          <p className="text-[var(--text-secondary)] mt-3 text-sm max-w-md mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-0 pb-2 md:pb-0">
+    <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
+    <span className="z-10 text-[11px] font-bold uppercase tracking-[0.32em] text-[#C1121F]">
+      WHAT WE OFFER
+    </span>
+    <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
+  </div>
+           <h2
+      className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
+      style={{
+        fontSize: "clamp(22px, 4vw, 34px)",
+        fontFamily: "'Cormorant Garamond', Georgia, serif",
+      }} >
+    Services Built for{" "}
+      <span className="relative inline-block text-[#C1121F]">
+        Every Journey
+        <svg
+          className="absolute left-0 bottom-[-3px] h-[7px] w-full"
+          viewBox="0 0 120 8"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,6 Q30,0 60,5 Q90,10 120,3"
+            stroke="#C1121F"
+            strokeWidth="2.5"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+    </h2>
+          <p className="text-[var(--text-secondary)] mt-3 px-2 md:p text-sm max-w-md mx-auto">
             From daily commutes to dream holidays — we've got every road covered.
           </p>
         </motion.div>

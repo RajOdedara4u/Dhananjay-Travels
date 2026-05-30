@@ -54,18 +54,17 @@ function StatItem({ num, label }) {
     : '0' + suffix;
 
   return (
-    <div ref={ref} className="flex items-center flex-1 justify-center">
-      <div className="flex flex-col items-center gap-[3px]">
-        <span className="text-white leading-none"
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 600 }}>
-          {display}
-        </span>
-        <span className="text-[9px] tracking-[.16em] uppercase text-white/70 font-light"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}>
-          {label}
-        </span>
-      </div>
-    </div>
+   <div ref={ref} className="flex flex-1 items-center justify-center">
+  <div className="flex flex-col items-center gap-0.5">
+    <span className="text-[clamp(1rem,5vw,1.2rem)] font-semibold leading-none text-white">
+      {display}
+    </span>
+
+    <span className="font-['DM_Sans'] text-[clamp(0.5rem,1.5vw,0.7rem)] uppercase tracking-[0.22em] text-white/70">
+      {label}
+    </span>
+  </div>
+</div>
   );
 }
 
@@ -81,7 +80,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/30 to-black/80" />
 
       <section className="relative flex flex-col items-left justify-center text-left px-4 sm:px-6 pt-28 md:pt-15 pb-16 min-h-screen">
-        <div className="flex flex-col items-left backdrop-blur-[1px] bg-black/20 rounded-3xl justify-evenly p-10 max-w-2xl">
+        <div className="flex flex-col items-left backdrop-blur-[1px] bg-black/20 rounded-3xl justify-evenly p-4 md:p-10 max-w-2xl">
 
           <motion.h1
             className="max-w-3xl font-black leading-[1] tracking-tight text-4xl sm:text-5xl md:text-6xl text-[var(--text-primary)] drop-shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
@@ -101,7 +100,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="mt-6"
           >
-            <span className="max-w-xl text-sm md:text-lg leading-relaxed font-medium text-white/75">
+            <span className="max-w-xl md:text-lg leading-relaxed font-medium text-white/75">
               Luxury tours, curated adventures, spiritual escapes, and unforgettable
               group experiences designed by Dhananjay Travels.
             </span>
