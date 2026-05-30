@@ -35,8 +35,7 @@ export default function AboutCard() {
             </motion.div>
 
             {/* Heading */}
-            <h3  style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",}} className="mt-3 text-2xl sm:text-3xl font-black text-black leading-tight">
+            <h3 className="mt-3 text-2xl sm:text-3xl font-black text-black leading-tight">
               Vadodara's Trusted <br />
               <span className="text-[var(--text-red)]">Bus Travel Partner</span>
             </h3>
@@ -44,12 +43,10 @@ export default function AboutCard() {
             {/* Red divider */}
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />
 
-            <p style={{
-            fontFamily: "'Cormorant Garamond', cursive, serif",}} className="text-[var(--text-secondary)] text-sm  leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-sm  leading-relaxed">
               Dhananjay Travels is a Vadodara-based travel agency specialising in premium bus services across Gujarat and India. Founded with a passion for safe, comfortable, and reliable journeys, we have grown into one of the most trusted names in group travel, corporate transportation, and pilgrimage tours.
             </p>
-            <p style={{
-            fontFamily: "'Cormorant Garamond', cursive, serif",}} className="mt-3 text-[var(--text-secondary)] text-sm  leading-relaxed">
+            <p className="mt-3 text-[var(--text-secondary)] text-sm  leading-relaxed">
               From our base at Waghodia Road, Vadodara, we operate a modern fleet of AC and Non-AC buses — ranging from 20-seat luxury coaches to 56-seat sleeper buses — serving thousands of happy travellers every year.
             </p>
 

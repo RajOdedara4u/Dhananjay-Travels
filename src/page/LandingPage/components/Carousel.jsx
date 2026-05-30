@@ -94,7 +94,7 @@ export default function Crousel() {
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative flex py-7 flex-col items-center overflow-hidden max-w-[90%] mx-auto">
+    <section className="relative flex py-7 pt-10 flex-col items-center overflow-hidden max-w-[90%] mx-auto">
       {/* decorative blobs */}
 
       {/* heading */}
@@ -123,7 +123,6 @@ export default function Crousel() {
       className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
       style={{
         fontSize: "clamp(22px, 4vw, 34px)",
-        fontFamily: "'Cormorant Garamond', Georgia, serif",
       }}
     >
       Brands That{" "}

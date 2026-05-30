@@ -71,11 +71,11 @@ function StatItem({ num, label }) {
 // ── Hero ───────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   return (
-    <div className="h-[90vh] md:h-[100vh]  overflow-hidden relative ">
+    <div className="min-h-screen overflow-hidden relative">
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{ backgroundImage: "url('hero.png')" }}
+        className="absolute inset-0 bg-cover bg-left md:bg-center"
+        style={{ backgroundImage: "url('hero.png')", backgroundAttachment: "scroll" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/70" />
 
@@ -87,7 +87,6 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             <span>Explore </span><span className="text-red-500">India,</span>
             <br />

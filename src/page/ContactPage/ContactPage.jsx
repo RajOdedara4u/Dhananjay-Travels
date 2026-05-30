@@ -1,19 +1,83 @@
 "use client";
 import { motion } from "framer-motion";
-import { MapPin, Star, Phone, Mail, Clock } from "lucide-react";
 import { IoCall } from "react-icons/io5";
+import { useRef} from "react";
+import {
+  Phone, Bus, MapPin, Clock, Mail,
+  Camera, Compass, ShieldCheck, PlaneTakeoff, Star, ArrowRight, CheckCircle2, Sparkles
+} from "lucide-react";
 
 export default function ContactPage() {
-  return (
-    <div className="font-sans overflow-hidden bg-white">
+  const heroRef = useRef(null);
 
-      <div className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "280px" }}>
+  return (
+    <div className="font-sans overflow-hidden">
+
+      {/* ── HERO ── */}
+      <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
+        {/* bg image */}
         <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{ backgroundImage: "url('/background.png')", filter: "blur(3px)" }}
+          className="absolute inset-0 bg-cover bg-center opacity-100"
+          style={{ backgroundImage: "url('/background.png')" }}
         />
-        {/* subtle dark scrim just for text readability */}
-        <div className="absolute inset-0 " />
+        {/* gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b via-black/60 to-black/90" />
+
+        {/* animated blobs */}
+        <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 6, repeat: Infinity }}
+          className="absolute top-[-80px] left-[-80px] w-80 h-80 rounded-full bg-[#48cae4]/20 blur-3xl pointer-events-none" />
+        <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 8, repeat: Infinity, delay: 2 }}
+          className="absolute bottom-[-60px] right-[-60px] w-96 h-96 rounded-full bg-[#0077b6]/25 blur-3xl pointer-events-none" />
+
+        {/* floating icons */}
+        {[Bus, MapPin, PlaneTakeoff, ShieldCheck].map((Icon, i) => (
+          <motion.div
+            key={i}
+            animate={{ y: [0, -14, 0], rotate: [0, i % 2 === 0 ? 8 : -8, 0] }}
+            transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.8 }}
+            className="absolute hidden text-grey-300 lg:flex items-center justify-center w-12 h-12 rounded-2xl backdrop-blur-sm border border-white/20 bg-white/30"
+            style={{
+              top: ["18%", "65%", "20%", "70%"][i],
+              left: ["8%", "6%", "88%", "90%"][i],
+            }}
+          >
+            <Icon size={20} className="  " />
+          </motion.div>
+        ))}
+
+        {/* content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pb-16" ref={heroRef}>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 mt-8"
+          >
+           
+            <h2 className="  text-3xl sm:text-4xl font-black tracking-tight">
+              Everything You Need,{" "}
+              <span className="relative inline-block text-[#C1121F]">
+                One Place
+                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 160 8" preserveAspectRatio="none" style={{ height: "7px" }}>
+                  <path d="M0,6 Q40,0 80,5 Q120,10 160,3" stroke="#C1121F" strokeWidth="3" fill="none" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h2>
+            <p className=" mt-4 text-sm sm:text-base max-w-xl mx-auto">
+              Specialized services specially designed to move people safely, comfortably, and on time — every single trip.
+            </p>
+          </motion.div>
+<motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20    text-xs font-bold tracking-widest px-4 py-2 rounded-full "
+          >
+            <Sparkles className="text-[#C1121F]" size={12} />
+           What We Offer
+          </motion.div>
+        </div>
 
         {/* torn paper bottom */}
         <div className="absolute bottom-0 left-0 w-full z-20" style={{ lineHeight: 0 }}>
@@ -21,44 +85,8 @@ export default function ContactPage() {
             <path d="M0,35 C60,15 90,52 140,34 C190,16 220,48 270,30 C320,12 360,46 410,28 C460,10 500,44 550,26 C600,8 640,42 690,24 C740,6 780,40 830,22 C880,4 920,38 970,20 C1020,2 1060,36 1110,18 C1160,0 1200,34 1250,16 C1300,0 1360,30 1400,18 C1420,12 1432,22 1440,18 L1440,70 L0,70 Z" fill="white" />
           </svg>
         </div>
-
-        {/* content */}
-        <div className="relative z-10 text-center px-4 max-w-2xl mx-auto py-20 pt-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white text-xs font-bold tracking-widest px-4 py-2 rounded-full mb-4"
-          >
-            <IoCall size={12} />
-            Get In Touch
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-black tracking-tight text-white"
-          >
-            We'd Love to{" "}
-            <span className="relative inline-block">
-              Hear From You
-              <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none" style={{ height: "7px" }}>
-                <path d="M0,6 Q50,0 100,5 Q150,10 200,3" stroke="#C1121F" strokeWidth="3" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white/75 mt-4 text-sm sm:text-base max-w-xl mx-auto"
-          >
-            Reach out for bookings, queries, or just to say hello — we're always here.
-          </motion.p>
-        </div>
       </div>
 
-      {/* ── CONTACT SECTION ── */}
       <div className="px-4 pt-4 pb-16">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -166,7 +194,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

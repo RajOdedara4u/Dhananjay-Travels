@@ -106,11 +106,19 @@ export default function Footer() {
                 </div>
               </div>
 
-              <p style={{ fontSize: 12.5, color: "#5F5F5F", lineHeight: 1.75, maxWidth: 230 }}>
-                Luxury tours, curated adventures & spiritual escapes across India —{" "}
-                <span style={{ color: "#C1121F", fontWeight: 600 }}>crafted with care.</span>
-              </p>
-
+             <p
+  style={{
+    fontSize: 12.5,
+    color: "#5F5F5F",
+    lineHeight: 1.75,
+    maxWidth: 230,
+  }}
+>
+  Bus rentals for corporate travel, events, and group transport —{" "}
+  <span style={{ color: "#C1121F", fontWeight: 600 }}>
+    safe & reliable.
+  </span>
+</p>
               {/* Social icons */}
               <div style={{ display: "flex", gap: 8 }}>
                 {[BsInstagram, BsTwitter, BsFacebook, BsYoutube].map((Icon, i) => (
@@ -214,7 +222,7 @@ export default function Footer() {
                   <MapPin size={13} color="#C1121F" />
                 </div>
                 <p style={{ fontSize: 12, color: "#5F5F5F", lineHeight: 1.75 }}>
-                  Shop F24, Jasraj Complex,<br />
+                  Shop F24, Jasraj Complex,
                   Waghodia Road,<br />
                   <span style={{ color: "#C1121F", fontWeight: 600 }}>Vadodara – 390025</span>
                 </p>
@@ -226,16 +234,19 @@ export default function Footer() {
        
 
           {/* ── Bottom bar ── */}
-          <div className="pt-7 pb-4 flex justify-between items-center text-sm">
+          <div className="pt-7 flex justify-between items-center text-sm">
             <p style={{ fontSize: 11, color: "#5F5F5F" }}>
-              © {new Date().getFullYear()}{" "}
+                      
               <span style={{ color: "#C1121F", fontWeight: 700 }}>Dhananjay Travels</span>
-              . All rights reserved.
+              <br />
+              © {new Date().getFullYear()}{" "}. All rights reserved.
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#FF9933", display: "inline-block" }} />
+            <div className="flex flex-col md:flex-row justify-center items-center">
+              <span>
+               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#FF9933", display: "inline-block" }} />
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#111", display: "inline-block" }} />
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#138808", display: "inline-block" }} />
+              </span>
               <p style={{ fontSize: 11, color: "#5F5F5F", marginLeft: 4 }}>Vadodara, Gujarat, India</p>
             </div>
           </div>

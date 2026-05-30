@@ -109,7 +109,6 @@ export default function ServiceSeaction() {
       className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
       style={{
         fontSize: "clamp(22px, 4vw, 34px)",
-        fontFamily: "'Cormorant Garamond', Georgia, serif",
       }} >
     Services Built for{" "}
       <span className="relative inline-block text-[#C1121F]">

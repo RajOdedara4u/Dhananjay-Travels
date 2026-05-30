@@ -133,9 +133,6 @@ function WaveDivider({ hovered }) {
         {/* Title */}
       <h3
   className="text-[18px] font-bold text-black leading-[1.2] mb-[7px]"
-  style={{
-    fontFamily: "'Cormorant Garamond', Georgia, serif",
-  }}
 >
   {service.title}
 </h3>

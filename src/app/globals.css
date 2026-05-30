@@ -20,26 +20,11 @@ html {
 body {
   background: var(--background-primary);
   color: var(--text-secondary);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-li,
-a,
-button,
-input,
-textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 
 /* Selection */
 ::selection {

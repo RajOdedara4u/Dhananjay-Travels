@@ -124,13 +124,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { icon: FaBus, num: "50+", label: "Buses in Fleet" },
-  { icon: FaUsers, num: "200+", label: "Corporate Clients" },
-  { icon: FaRoute, num: "10K+", label: "Trips Completed" },
-  { icon: FaHeadset, num: "24/7", label: "Customer Support" },
-];
-
 export default function ServicesPage() {
   const heroRef = useRef(null);
 
@@ -138,14 +131,14 @@ export default function ServicesPage() {
     <div className="  font-sans overflow-hidden">
 
       {/* ── HERO ── */}
-      <div className="relative bg-[#03045e] flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
+      <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
         {/* bg image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-100"
           style={{ backgroundImage: "url('/background.png')" }}
         />
         {/* gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#03045e] via-[#0077b6]/80 to-[#00b4d8]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b via-black/60 to-black/90" />
 
         {/* animated blobs */}
         <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 6, repeat: Infinity }}
@@ -159,7 +152,7 @@ export default function ServicesPage() {
             key={i}
             animate={{ y: [0, -14, 0], rotate: [0, i % 2 === 0 ? 8 : -8, 0] }}
             transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.8 }}
-            className="absolute hidden lg:flex items-center justify-center w-12 h-12 rounded-2xl  /10 backdrop-blur-sm border border-white/20"
+            className="absolute hidden text-grey-300 lg:flex items-center justify-center w-12 h-12 rounded-2xl backdrop-blur-sm border border-white/20 bg-white/30"
             style={{
               top: ["18%", "65%", "20%", "70%"][i],
               left: ["8%", "6%", "88%", "90%"][i],
@@ -181,24 +174,24 @@ export default function ServicesPage() {
            
             <h2 className="  text-3xl sm:text-4xl font-black tracking-tight">
               Everything You Need,{" "}
-              <span className="relative inline-block">
+              <span className="relative inline-block text-[#C1121F]">
                 One Place
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 160 8" preserveAspectRatio="none" style={{ height: "7px" }}>
-                  <path d="M0,6 Q40,0 80,5 Q120,10 160,3" stroke="#00b4d8" strokeWidth="3" fill="none" strokeLinecap="round" />
+                  <path d="M0,6 Q40,0 80,5 Q120,10 160,3" stroke="#C1121F" strokeWidth="3" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
             </h2>
-            <p className="   mt-4 text-sm sm:text-base max-w-xl mx-auto">
-              Nine specialized services designed to move people safely, comfortably, and on time — every single trip.
+            <p className=" mt-4 text-sm sm:text-base max-w-xl mx-auto">
+              Specialized services specially designed to move people safely, comfortably, and on time — every single trip.
             </p>
           </motion.div>
 <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2  /10 backdrop-blur-sm border border-white/20    text-xs font-bold tracking-widest px-4 py-2 rounded-full "
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20    text-xs font-bold tracking-widest px-4 py-2 rounded-full "
           >
-            <Sparkles size={12} />
+            <Sparkles className="text-[#C1121F]" size={12} />
            What We Offer
           </motion.div>
         </div>
@@ -221,28 +214,6 @@ export default function ServicesPage() {
               <ServiceCard key={service.title} service={service} index={i} />
             ))}
           </div>
-        </div>
-      </div>
-
-       {/* ── STATS STRIP ── */}
-      <div className="  py-10 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="flex flex-col items-center text-center p-5 rounded-2xl bg-gradient-to-br from-[#f0f9ff] to-[#e0f7fa] border border-[#90e0ef]/30 shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0077b6] to-[#48cae4] flex items-center justify-center mb-3 shadow">
-                <s.icon className=" " size={18} />
-              </div>
-              <p className="   text-2xl font-black">{s.num}</p>
-              <p className="   text-xs font-semibold mt-0.5">{s.label}</p>
-            </motion.div>
-          ))}
         </div>
       </div>
     </div>
