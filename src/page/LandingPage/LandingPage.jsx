@@ -10,12 +10,12 @@ export default function LandingPage() {
   return (
     <>
       <HeroSection />
-      <Carousel />
+           <Carousel />
       <ServiceSeaction />
       <AboutCard />
       <BusBenefitsSection />
       <TrackDivider />  
       <FleetSection />
-    </>
+          </>
   );
 }

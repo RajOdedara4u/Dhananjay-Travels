@@ -89,16 +89,14 @@ const services = [
 
 export default function ServiceSeaction() {
   return (
-    <section className="relative py-10 px-4 overflow-hidden ">
-      <div className="relative max-w-6xl mx-auto">
-
+    <section className="relative overflow-hidden py-7 max-w-[90%] mx-auto">
         {/* heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-7"
         >
         <div className="flex items-center justify-center gap-2 mb-0 pb-2 md:pb-0">
     <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
@@ -153,14 +151,13 @@ export default function ServiceSeaction() {
 >
   <Link
     href="/services"
-    className="group inline-flex items-center gap-3 rounded-full bg-[#C1121F] hover:bg-[#A30F1A] px-6 py-3 text-[var(--text-primary)] text-sm font-semibold transition-all duration-300 shadow-[0_8px_24px_rgba(193,18,31,0.3)] hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] hover:scale-[1.02]"
+    className="group inline-flex items-center gap-3 rounded-full bg-[#C1121F] hover:bg-[#A30F1A] px-6 py-3 text-[var(--text-primary)] text-sm font-semibold transition-all duration-300 hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] hover:scale-[1.02]"
   >
     View All Services
     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
   </Link>
 </motion.div>
 
-      </div>
     </section>
   );
 }

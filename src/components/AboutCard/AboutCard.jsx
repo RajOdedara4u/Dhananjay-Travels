@@ -12,8 +12,7 @@ const highlights = [
 
 export default function AboutCard() {
   return (
-    <section className="px-6 py-14">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-7 max-w-[90%] mx-auto">
         <motion.div
           className="flex flex-col md:flex-row items-center gap-12"
           initial={{ opacity: 0, y: 40 }}
@@ -108,7 +107,6 @@ export default function AboutCard() {
           </motion.div>
 
         </motion.div>
-      </div>
     </section>
   );
 }

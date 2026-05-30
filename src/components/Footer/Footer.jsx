@@ -48,7 +48,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="my-5" style={{ position: "relative"}}>
+    <footer className="py-5" style={{ position: "relative"}}>
 
    {/* ── Divider ── */}
           <div className="" style={{ position: "relative"}}>

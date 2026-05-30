@@ -71,16 +71,16 @@ function StatItem({ num, label }) {
 // ── Hero ───────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   return (
-    <div className="min-h-screen overflow-hidden relative font-sans">
+    <div className="min-h-screen overflow-hidden relative ">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ backgroundImage: "url('hero.png')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/30 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/70" />
 
       <section className="relative flex flex-col items-left justify-center text-left px-4 sm:px-6 pt-28 md:pt-15 pb-16 min-h-screen">
-        <div className="flex flex-col items-left backdrop-blur-[1px] bg-black/20 rounded-3xl justify-evenly p-4 md:p-10 max-w-2xl">
+        <div className="flex flex-col items-left mb-20 md:mb-0  backdrop-blur-[1px] bg-black/20 rounded-3xl justify-evenly p-4 md:p-7 max-w-2xl">
 
           <motion.h1
             className="max-w-3xl font-black leading-[1] tracking-tight text-4xl sm:text-5xl md:text-6xl text-[var(--text-primary)] drop-shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
@@ -138,7 +138,7 @@ export default function HeroSection() {
           </defs>
           <path d="M0,95 C120,120 220,60 340,85 C460,110 560,150 700,120 C840,90 980,40 1120,70 C1260,100 1360,130 1440,95 L1440,180 L0,180 Z" fill="url(#waveGradient2)" filter="url(#blur)" />
           <path d="M0,110 C140,70 280,150 420,110 C560,70 700,40 840,90 C980,140 1120,140 1260,100 C1340,78 1400,88 1440,95 L1440,180 L0,180 Z" fill="url(#waveGradient1)" />
-          <path d="M0,118 C140,80 280,155 420,118 C560,82 700,52 840,98 C980,144 1120,144 1260,108 C1340,90 1400,96 1440,102" stroke="rgba(255, 29, 29, 0.34)" strokeWidth="4" fill="none" strokeLinecap="round" />
+          <path d="M0,118 C140,80 280,155 420,118 C560,82 700,52 840,98 C980,144 1120,144 1260,108 C1340,90 1400,96 1440,102" stroke="rgba(200, 0, 0, 0.34)" strokeWidth="4" fill="none" strokeLinecap="round" />
         </svg>
       </div>
     </div>

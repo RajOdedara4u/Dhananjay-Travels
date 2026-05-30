@@ -94,7 +94,7 @@ export default function Crousel() {
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative flex flex-col items-center pt-7 md:pt-14 px-4 overflow-hidden">
+    <section className="relative flex py-7 flex-col items-center overflow-hidden max-w-[90%] mx-auto">
       {/* decorative blobs */}
 
       {/* heading */}
