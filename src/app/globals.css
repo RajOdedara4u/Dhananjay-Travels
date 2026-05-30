@@ -13,13 +13,14 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Global styles */
 body {
   background: var(--background-primary);
   color: var(--text-secondary);
-  font-family: "Cormorant Garamond", cursive, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -29,11 +30,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-}
-
-/* Paragraphs */
+h6,
 p,
 span,
 li,
@@ -41,7 +38,7 @@ a,
 button,
 input,
 textarea {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Selection */

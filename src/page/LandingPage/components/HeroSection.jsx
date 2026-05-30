@@ -123,7 +123,7 @@ export default function HeroSection() {
 
       </section>
 
-      <div className="absolute inset-3 rounded-[32px] border border-[#caf0f8]/10 pointer-events-none" />
+      <div className="absolute inset-y-3 inset-x-0 rounded-[32px] border border-[#caf0f8]/10 pointer-events-none" />
 
       {/* Wave Divider */}
       <div className="absolute bottom-[-20] left-0 w-full overflow-hidden leading-none" style={{ lineHeight: 0 }}>
