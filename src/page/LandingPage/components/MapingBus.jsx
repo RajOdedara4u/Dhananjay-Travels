@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import {
   Bus,
   ShieldCheck,
@@ -93,12 +94,14 @@ export default function MapingBus() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="h-[120px] md:h-[130px] rounded-xl overflow-hidden group"
+                className="relative h-[120px] md:h-[130px] rounded-xl overflow-hidden group"
               >
-                <img
+                <Image
                   src={activeBus.images[0]}
                   alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  priority={activeBus.seats === 40}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </motion.div>
 
@@ -110,10 +113,12 @@ export default function MapingBus() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative h-[200px] md:h-[220px] rounded-xl overflow-hidden group"
               >
-                <img
+                <Image
                   src={activeBus.images[1]}
                   alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  priority={activeBus.seats === 40}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
@@ -152,10 +157,12 @@ export default function MapingBus() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="relative h-[200px] md:h-[220px] rounded-xl overflow-hidden group"
               >
-                <img
+                <Image
                   src={activeBus.images[2]}
                   alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  priority={activeBus.seats === 40}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -182,10 +189,12 @@ export default function MapingBus() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative h-[355px] rounded-xl overflow-hidden group hidden lg:block"
             >
-              <img
+              <Image
                 src={activeBus.images[0]}
                 alt=""
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                priority={activeBus.seats === 40}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const stats = [
@@ -73,9 +74,13 @@ export default function HeroSection() {
   return (
     <div className="min-h-screen overflow-hidden relative">
       {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-left md:bg-center"
-        style={{ backgroundImage: "url('hero.png')", backgroundAttachment: "scroll" }}
+      <Image
+        src="/hero.png"
+        alt="Hero background"
+        fill
+        priority
+        quality={85}
+        className="object-cover object-left md:object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/70" />
 

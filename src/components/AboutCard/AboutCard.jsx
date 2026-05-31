@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const highlights = [
   "50+ well-maintained AC & Non-AC buses",
@@ -88,16 +89,16 @@ export default function AboutCard() {
 
               <div className="grid grid-cols-2 gap-3" style={{ gridTemplateRows: "160px 130px" }}>
                 {/* top-left */}
-                <div className="overflow-hidden shadow-lg border-2 border-[var(--border-color)] z-10" style={{ borderRadius: "2rem 0.5rem 2rem 0.5rem" }}>
-                  <img src="/background.png" alt="Fleet" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="relative overflow-hidden shadow-lg border-2 border-[var(--border-color)] z-10" style={{ borderRadius: "2rem 0.5rem 2rem 0.5rem" }}>
+                  <Image src="/background.png" alt="Fleet" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
                 {/* right tall */}
-                <div className="row-span-2 z-10 overflow-hidden shadow-xl border-2 border-[var(--border-color)]" style={{ borderRadius: "0.5rem 2.5rem 0.5rem 2.5rem" }}>
-                  <img src="/img1.png" alt="Journey" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="relative row-span-2 z-10 overflow-hidden shadow-xl border-2 border-[var(--border-color)]" style={{ borderRadius: "0.5rem 2.5rem 0.5rem 2.5rem" }}>
+                  <Image src="/img1.png" alt="Journey" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
                 {/* bottom-left */}
-                <div className="overflow-hidden shadow-md border-2 border-[var(--border-color)]" style={{ borderRadius: "1.5rem 0.5rem 0.5rem 1.5rem" }}>
-                  <img src="/img2.png" alt="Comfort" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="relative overflow-hidden shadow-md border-2 border-[var(--border-color)]" style={{ borderRadius: "1.5rem 0.5rem 0.5rem 1.5rem" }}>
+                  <Image src="/img2.png" alt="Comfort" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               </div>
             </div>

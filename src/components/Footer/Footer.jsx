@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
-import { Phone, MapPin, Mail } from "lucide-react";
-import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
-
+import { Phone, MapPin, Mail, BusIcon } from "lucide-react";
+import WaveDivider from "../WaveDivider"; 
 function DotPattern() {
   return (
     <svg width="140" height="100" viewBox="0 0 140 100" fill="none"
@@ -15,7 +14,6 @@ function DotPattern() {
     </svg>
   );
 }
-
 function CornerCircles() {
   return (
     <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
@@ -26,17 +24,7 @@ function CornerCircles() {
     </svg>
   );
 }
-
-function RouteIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-      stroke="#C1121F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="6" cy="6" r="3" />
-      <circle cx="18" cy="18" r="3" />
-      <path d="M6 9v3a3 3 0 0 0 3 3h6" />
-    </svg>
-  );
-}
+const CURRENT_YEAR = new Date().getFullYear();
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -48,26 +36,9 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="py-5" style={{ position: "relative"}}>
-
-   {/* ── Divider ── */}
-          <div className="" style={{ position: "relative"}}>
-            <div style={{ height: 1, background: "#f0e4e4" }} />
-            <div style={{
-              position: "absolute", top: "50%", left: "50%",
-              transform: "translate(-50%, -50%)",
-              background: "#fff", padding: "0 12px",
-              display: "flex", alignItems: "center", gap: 8,
-            }}>
-              <RouteIcon />
-              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#C1121F" }}>
-                Dhananjay Travels
-              </span>
-              <RouteIcon />
-            </div>
-          </div>
+    <footer className="py-3" style={{ position: "relative"}}>
       <div style={{ position: "relative", overflow: "hidden" }}>
-
+      <WaveDivider />
         <DotPattern />
         <CornerCircles />
 
@@ -121,8 +92,13 @@ export default function Footer() {
 </p>
               {/* Social icons */}
               <div style={{ display: "flex", gap: 8 }}>
-                {[BsInstagram, BsTwitter, BsFacebook, BsYoutube].map((Icon, i) => (
-                  <a key={i} href="#"
+                {[
+                  { label: "Instagram", path: "M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
+                  { label: "Twitter", path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
+                  { label: "Facebook", path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
+                  { label: "YouTube", path: "M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
+                ].map(({ label, path }) => (
+                  <a key={label} href="#"
                     style={{
                       width: 34, height: 34, borderRadius: "50%",
                       display: "flex", alignItems: "center", justifyContent: "center",
@@ -142,7 +118,9 @@ export default function Footer() {
                       e.currentTarget.style.color = "#C1121F";
                     }}
                   >
-                    <Icon size={13} />
+                    <svg width={13} height={13} viewBox="0 0 24 24" fill="currentColor">
+                      <path d={path} />
+                    </svg>
                   </a>
                 ))}
               </div>
@@ -239,7 +217,7 @@ export default function Footer() {
                       
               <span style={{ color: "#C1121F", fontWeight: 700 }}>Dhananjay Travels</span>
               <br />
-              © {new Date().getFullYear()}{" "}. All rights reserved.
+              © {CURRENT_YEAR}. All rights reserved.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center">
               <span>

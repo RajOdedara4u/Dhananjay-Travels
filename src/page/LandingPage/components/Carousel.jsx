@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import DotGrid from "./DotGrid"
 
 const clients = [
@@ -112,10 +113,12 @@ export default function Crousel() {
 
   {/* Heading */}
   <div className="relative flex items-center justify-center gap-3">
-    <img
+    <Image
       src="/leftWing.png"
       alt=""
       aria-hidden="true"
+      width={180}
+      height={180}
       className="absolute right-[90%] invisible sm:visible size-45 p-2 object-contain"
     />
 
@@ -144,10 +147,12 @@ export default function Crousel() {
       </span>
     </h2>
 
-    <img
+    <Image
       src="/rightWing.png"
       alt=""
       aria-hidden="true"
+      width={180}
+      height={180}
       className="absolute left-[90%] invisible sm:visible size-45 p-2 object-contain"
     />
   </div>
@@ -193,16 +198,18 @@ export default function Crousel() {
                 key={i}
                 className="absolute flex items-center justify-center z-10"
                 style={{
-                  width: "92",
-                  height: "58",
-                  left: `calc(${(lx - 46) / SIZE} * ${scale})`,
-                  top: `calc(${(ly - 29) / SIZE} * ${scale})`,
+                  width: "92px",
+                  height: "58px",
+                  left: `calc(${((lx - 46) / SIZE).toFixed(4)} * ${scale})`,
+                  top: `calc(${((ly - 29) / SIZE).toFixed(4)} * ${scale})`,
                 }}
               >
-                <img
+                <Image
                   src={client.src}
                   alt={client.alt}
-                  className="sm:max-w-[112px] rounded-full sm:max-h-[80px] max-w-[72px] max-h-[40px] object-contain animate-reverse-spin "
+                  width={112}
+                  height={80}
+                  className="sm:max-w-[112px] rounded-full sm:max-h-[80px] max-w-[72px] max-h-[40px] object-contain animate-reverse-spin"
                   style={{ transform: `rotate(${rotateDeg}deg)` }}
                 />
               </div>
@@ -220,9 +227,11 @@ export default function Crousel() {
             boxShadow: "0 0 0 2px  0 4px 24px rgba(193,18,31,0.15)",
           }}
         >
-          <img
+          <Image
             src="/bus.png"
             alt="Bus"
+            width={520}
+            height={520}
             className="object-contain size-70 md:size-130"
             style={{ right: "1%", position: "relative" }}
           />

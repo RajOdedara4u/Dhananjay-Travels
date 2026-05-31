@@ -8,7 +8,6 @@ export default function TrackDivider() {
       width={1440}
       height={80}
       className="w-full h-auto block"
-      priority
     />
     </div>
   );

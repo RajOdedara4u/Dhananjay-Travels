@@ -1,21 +1,26 @@
+import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
-import Carousel from "./components/Carousel";
-import FleetSection from "./components/FleetSection";
-import ServiceSeaction from "./components/ServiceSeaction";
-import TrackDivider from "./components/TrackDivider";
-import { AboutCard } from "@/components";
-import WaveDivider from "./components/WaveDivider";
-import BusBenefitsSection from "./BusBenefitsSection";
+import Spinner from "../../components/Spinner";
+
+const fallback = <Spinner />;
+
+const Carousel       = dynamic(() => import("./components/Carousel"),             { loading: () => fallback });
+const ServiceSection = dynamic(() => import("./components/ServiceSeaction"),       { loading: () => fallback });
+const AboutCard      = dynamic(() => import("@/components/AboutCard/AboutCard"),   { loading: () => fallback });
+const BusBenefits    = dynamic(() => import("./BusBenefitsSection"),               { loading: () => fallback });
+const TrackDivider   = dynamic(() => import("./components/TrackDivider"),          { loading: () => fallback });
+const FleetSection   = dynamic(() => import("./components/FleetSection"),          { loading: () => fallback });
+
 export default function LandingPage() {
   return (
     <>
       <HeroSection />
       <Carousel />
-      <ServiceSeaction />
+      <ServiceSection />
       <AboutCard />
-      <BusBenefitsSection />
-      <TrackDivider />  
+      <BusBenefits />
+      <TrackDivider />
       <FleetSection />
-          </>
+    </>
   );
 }

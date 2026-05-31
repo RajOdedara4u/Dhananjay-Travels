@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -41,7 +42,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <img src="/logo.jpeg" alt="Dhananjay Travels" className="w-9 h-9 rounded-xl object-cover" />
+            <Image src="/logo.jpeg" alt="Dhananjay Travels" width={36} height={36} priority className="rounded-xl object-cover" />
             <div className="flex flex-col items-start">
               <h2
                 className="text-base leading-tight transition-colors duration-300"

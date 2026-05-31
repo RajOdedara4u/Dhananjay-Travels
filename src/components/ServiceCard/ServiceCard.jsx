@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function ServiceCard({ service, index, total = 6 }) {
   const [hovered, setHovered] = useState(false);
@@ -66,17 +67,15 @@ function WaveDivider({ hovered }) {
         }}
       >
         {/* Photo */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url('${service.cardImage}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transition: "transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)",
-            transform: hovered ? "scale(1.07)" : "scale(1.01)",
-          }}
-        />
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", transition: "transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)", transform: hovered ? "scale(1.07)" : "scale(1.01)" }}>
+          <Image
+            src={service.cardImage}
+            alt={service.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
         {/* Bottom white shadow fade — image bleeds into card */}
         <div
           style={{

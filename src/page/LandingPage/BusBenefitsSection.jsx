@@ -68,10 +68,6 @@ function RightCard({ icon: Icon, title, index }) {
   return (
     <motion.div
       className="flex items-center justify-start gap-0 w-full z-10"
-      initial={{ opacity: 0, x: 60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
     >
       <motion.div
         className="flex flex-col justify-center items-center mx-auto"
