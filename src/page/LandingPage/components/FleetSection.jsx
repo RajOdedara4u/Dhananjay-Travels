@@ -13,8 +13,8 @@ export default function FleetSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="inline-block text-[var(--text-red)] text-xs font-bold uppercase tracking-[0.35em]">Our Fleet</span>
-          <h2 className="mt-1 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] font-black text-black leading-tight">
+          <span className="inline-block text-[var(--text-red)] text-[0.6rem] md:text-[0.8rem] font-bold uppercase tracking-[0.35em] ">Our Fleet</span>
+          <h2 className="mt-1 text-[1.1rem] sm:text-[1.8rem] md:text-[2.2rem] font-black text-black leading-tight">
             Choose Your{" "}
             <span className="relative inline-block text-[var(--text-red)]">
               Perfect Ride
@@ -23,7 +23,7 @@ export default function FleetSection() {
               </svg>
             </span>
           </h2>
-          <p className="mt-3 text-[0.6rem] sm:text-[0.8rem] md:text-[1rem] text-[var(--text-secondary)] text-sm sm:text-base max-w-xl mx-auto">
+          <p className="mt-3 text-[0.7rem] sm:text-[0.8rem] md:text-[0.9rem] max-w-lg text-[var(--text-secondary)] text-sm sm:text-base mx-auto">
             From compact coaches to luxury sleepers — every bus in our fleet is maintained to the highest standard.
           </p>
           <motion.div

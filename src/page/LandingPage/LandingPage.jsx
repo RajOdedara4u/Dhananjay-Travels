@@ -16,7 +16,6 @@ export default function LandingPage() {
     <>
       <HeroSection />
       <Carousel />
-      <ServiceSection />
       <AboutCard />
       <BusBenefits />
       <TrackDivider />

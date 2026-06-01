@@ -100,7 +100,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="mt-6"
           >
-            <span className="max-w-xl md:text-lg leading-relaxed font-medium text-white/75">
+            <span className="max-w-xl text-[0.8rem] md:text-[1.1rem] leading-relaxed font-medium text-white/75">
               Luxury tours, curated adventures, spiritual escapes, and unforgettable
               group experiences designed by Dhananjay Travels.
             </span>

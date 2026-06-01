@@ -33,24 +33,24 @@ export default function AboutCard() {
               Who We Are
             </motion.div>
 
-            <h3 className="mt-3 text-2xl sm:text-3xl font-black text-black leading-tight">
+            <h3 className="mt-3 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] font-black text-black leading-tight">
               Vadodara's Trusted <br />
               <span className="text-[var(--text-red)]">Bus Travel Partner</span>
             </h3>
 
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />
 
-            <p className="text-[var(--text-secondary)] text-sm  leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-[0.7rem] md:text-[0.9rem] leading-relaxed">
               Dhananjay Travels is a Vadodara-based travel agency specialising in premium bus services across Gujarat and India. Founded with a passion for safe, comfortable, and reliable journeys, we have grown into one of the most trusted names in group travel, corporate transportation, and pilgrimage tours.
             </p>
-            <p className="mt-3 text-[var(--text-secondary)] text-sm  leading-relaxed">
+            <p className="mt-3 text-[var(--text-secondary)] text-[0.7rem] md:text-[0.9rem] leading-relaxed">
               From our base at Waghodia Road, Vadodara, we operate a modern fleet of AC and Non-AC buses — ranging from 20-seat luxury coaches to 56-seat sleeper buses — serving thousands of happy travellers every year.
             </p>
 
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {highlights.map((h) => (
-                <li key={h} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                  <CheckCircle2 size={14} className="text-[var(--text-red)] flex-shrink-0" />
+                <li key={h} className="flex text-[0.6rem] md:text-[0.8rem] items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle2 size={14} className="text-[var(--text-red)] flex-shrink-0 " />
                   {h}
                 </li>
               ))}

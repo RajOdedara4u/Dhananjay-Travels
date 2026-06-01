@@ -42,7 +42,7 @@ function LeftCard({ icon: Icon, title, index }) {
         >
           <Icon className="w-4 h-4 text-red-500" strokeWidth={2.2} />
         </motion.div>
-        <p className="text-[0.5rem] text-center md:text-[0.7rem] text-black/80 leading-[1.6] font-light mb-[14px]">
+        <p className="text-[0.6rem] text-center md:text-[0.8rem] text-black/80 leading-[1.6] font-light mb-[14px]">
           {title}
         </p>
       </motion.div>
@@ -82,7 +82,7 @@ function RightCard({ icon: Icon, title, index }) {
         >
           <Icon className="w-4 h-4 text-red-500" strokeWidth={2.2} />
         </motion.div>
-        <p className="text-[0.5rem] text-center md:text-[0.7rem] text-black/80 leading-[1.6] font-light mb-[14px]">
+        <p className="text-[0.6rem] text-center md:text-[0.8rem] text-black/80 leading-[1.6] font-light mb-[14px]">
           {title}
         </p>
       </motion.div>

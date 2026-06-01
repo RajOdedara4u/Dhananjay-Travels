@@ -96,16 +96,14 @@ export default function ServiceSeaction() {
         >
         <div className="flex items-center justify-center gap-2 mb-0 pb-2 md:pb-0">
     <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
-    <span className="z-10 text-[11px] font-bold uppercase tracking-[0.32em] text-[#C1121F]">
+    <span className="z-10 text-[0.6rem] md:text-[0.8rem] font-bold uppercase tracking-[0.32em] text-[#C1121F]">
       WHAT WE OFFER
     </span>
     <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
   </div>
            <h2
-      className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
-      style={{
-        fontSize: "clamp(22px, 4vw, 34px)",
-      }} >
+      className="z-10 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem]  whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
+       >
     Services Built for{" "}
       <span className="relative inline-block text-[#C1121F]">
         Every Journey
@@ -124,7 +122,7 @@ export default function ServiceSeaction() {
         </svg>
       </span>
     </h2>
-          <p className="text-[var(--text-secondary)] mt-3 px-2 md:p text-sm max-w-md mx-auto">
+          <p className="text-[var(--text-secondary)] text-[0.8rem] sm:text-[0.9rem] max-w-lg mt-3 px-2 md:p text-sm mx-auto">
             From daily commutes to dream holidays — we've got every road covered.
           </p>
         </motion.div>

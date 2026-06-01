@@ -64,7 +64,7 @@ export default function MapingBus() {
             <button
               key={bus.id}
               onClick={() => setActiveSeat(bus.seats)}
-              className={`relative px-3 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-1.5 rounded-full text-[0.6rem] sm:text-[0.7rem]] md:text-sm font-medium transition-all duration-300 ${
                 activeSeat === bus.seats
                   ? "bg-white shadow-[0_6px_18px_rgba(0,0,0,0.1)] text-black"
                   : "text-gray-500 hover:text-black"

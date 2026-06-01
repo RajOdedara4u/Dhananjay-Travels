@@ -109,10 +109,7 @@ export default function Crousel() {
     />
 
     <h2
-      className="z-10 whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
-      style={{
-        fontSize: "clamp(22px, 4vw, 34px)",
-      }}
+      className="z-10 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] whitespace-nowrap font-black leading-[1.2] tracking-[-0.01em] text-[#111]"
     >
       Brands That{" "}
       <span className="relative inline-block text-[#C1121F]">
@@ -143,7 +140,7 @@ export default function Crousel() {
     />
   </div>
 
-  <p className="z-10 mt-2 max-w-[380px] px-3 text-[13px] leading-[1.6] text-[#5F5F5F]">
+  <p className="z-10 mt-2 text-[0.8rem] max-w-sm px-3 leading-[1.6] text-[#5F5F5F]">
     Leading companies trust{" "}
     <span className="font-semibold text-[#C1121F]">
       Dhananjay Travels
