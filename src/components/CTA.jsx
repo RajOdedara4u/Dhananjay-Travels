@@ -10,15 +10,11 @@ const CTA = () => <>
   viewport={{ once: true }}
   transition={{ duration: 0.6 }}
 >
-  {/* Glow Background */}
   <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-white/10 to-white" />
 
-  {/* Blur Effect */}
   <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#C1121F]/20 blur-3xl rounded-full" />
 
-  {/* Left Content */}
   <div className="relative z-10 flex items-center gap-4">
-    {/* Glass Icon */}
     <motion.div
       whileHover={{ rotate: 6, scale: 1.05 }}
       transition={{ type: "spring", stiffness: 200 }}
@@ -60,7 +56,6 @@ const CTA = () => <>
       </svg>
     </motion.div>
 
-    {/* Text */}
     <div>
       <h3 className="text-[#1A1A1A] font-black text-sm sm:text-base leading-tight">
         Ready for Your Next Journey?
@@ -72,7 +67,6 @@ const CTA = () => <>
     </div>
   </div>
 
-  {/* CTA Button */}
   <motion.a
     whileHover={{ scale: 1.04 }}
     whileTap={{ scale: 0.96 }}
@@ -90,7 +84,6 @@ const CTA = () => <>
     <span className="relative z-10">Call Us Now</span>
   </motion.a>
 
-  {/* Bottom Shine */}
   <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#C1121F] to-transparent opacity-50" />
 </motion.div>
 </>

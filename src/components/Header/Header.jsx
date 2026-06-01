@@ -40,7 +40,6 @@ export default function Header() {
       >
         <div className="flex items-center justify-between">
 
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <Image src="/logo.jpeg" alt="Dhananjay Travels" width={36} height={36} priority className="rounded-xl object-cover" />
             <div className="flex flex-col items-start">
@@ -59,7 +58,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8 font-medium">
             {links.map((l, i) => (
               <motion.div
@@ -78,7 +76,6 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Hamburger */}
           <button
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] cursor-pointer"
             onClick={() => setOpen(!open)}
@@ -98,7 +95,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {open && (
             <motion.div

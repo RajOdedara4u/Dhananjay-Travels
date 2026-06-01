@@ -42,7 +42,6 @@ export default function Footer() {
         <DotPattern />
         <CornerCircles />
 
-        {/* Red glow top-left */}
         <div style={{
           position: "absolute", top: -80, left: -80,
           width: 280, height: 280, borderRadius: "50%",
@@ -52,10 +51,8 @@ export default function Footer() {
 
         <div style={{ maxWidth: 1152, margin: "0 auto", padding: "48px 24px 0px", position: "relative", zIndex: 1 }}>
 
-          {/* ── Top grid ── */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "40px 32px" }}>
 
-            {/* Brand */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ position: "relative" }}>
@@ -90,7 +87,6 @@ export default function Footer() {
     safe & reliable.
   </span>
 </p>
-              {/* Social icons */}
               <div style={{ display: "flex", gap: 8 }}>
                 {[
                   { label: "Instagram", path: "M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
@@ -126,7 +122,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick Links */}
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                 <span style={{ width: 16, height: 2.5, background: "#C1121F", borderRadius: 2, display: "inline-block" }} />
@@ -148,7 +143,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Contact */}
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                 <span style={{ width: 16, height: 2.5, background: "#C1121F", borderRadius: 2, display: "inline-block" }} />
@@ -157,7 +151,6 @@ export default function Footer() {
                 </h3>
               </div>
 
-              {/* Phone */}
               <a href="tel:+917567200702" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
                 <div style={{
                   width: 32, height: 32, borderRadius: 8, flexShrink: 0,
@@ -172,7 +165,6 @@ export default function Footer() {
                 </div>
               </a>
 
-              {/* Email */}
               <a href="mailto:info@dhananjaytravels.com" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
                 <div style={{
                   width: 32, height: 32, borderRadius: 8, flexShrink: 0,
@@ -186,7 +178,6 @@ export default function Footer() {
                 </p>
               </a>
 
-              {/* Address */}
               <a
                 href="https://maps.google.com/?q=Jasraj+Complex+Waghodia+Road+Vadodara"
                 target="_blank" rel="noopener noreferrer"
@@ -206,15 +197,10 @@ export default function Footer() {
                 </p>
               </a>
             </div>
-
           </div>
 
-       
-
-          {/* ── Bottom bar ── */}
           <div className="pt-7 flex justify-between items-center text-sm">
             <p style={{ fontSize: 11, color: "#5F5F5F" }}>
-                      
               <span style={{ color: "#C1121F", fontWeight: 700 }}>Dhananjay Travels</span>
               <br />
               © {CURRENT_YEAR}. All rights reserved.
@@ -228,7 +214,6 @@ export default function Footer() {
               <p style={{ fontSize: 11, color: "#5F5F5F", marginLeft: 4 }}>Vadodara, Gujarat, India</p>
             </div>
           </div>
-
         </div>
       </div>
     </footer>

@@ -2,13 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import {
-  Bus,
-  ShieldCheck,
-  MapPinned,
-  ArrowLeft,
-  ArrowRight,
-} from "lucide-react";
+import { Bus, ShieldCheck, MapPinned } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const buses = [
@@ -63,9 +57,8 @@ export default function MapingBus() {
 
   return (
     <section className="w-full pb-8 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto md:px-4">
 
-        {/* SEAT NAVIGATION */}
         <div className="flex items-center justify-center gap-1 md:gap-4 flex-wrap">
           {buses.map((bus) => (
             <button
@@ -82,13 +75,10 @@ export default function MapingBus() {
           ))}
         </div>
 
-        {/* GRID */}
         <AnimatePresence mode="wait">
           <div key={activeBus.id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_180px] gap-3 mt-5">
 
-            {/* LEFT SIDE */}
             <div className="flex flex-col gap-4">
-              {/* TOP IMAGE */}
               <motion.div
                 key={activeBus.id + "-img0"}
                 initial={{ opacity: 0, y: 20 }}
@@ -105,7 +95,6 @@ export default function MapingBus() {
                 />
               </motion.div>
 
-              {/* LARGE IMAGE */}
               <motion.div
                 key={activeBus.id + "-img1"}
                 initial={{ opacity: 0, y: 20 }}
@@ -124,9 +113,7 @@ export default function MapingBus() {
               </motion.div>
             </div>
 
-            {/* CENTER */}
             <div className="flex flex-col gap-4">
-              {/* INFO CARD */}
               <motion.div
                 key={activeBus.id + "-info"}
                 initial={{ opacity: 0, y: 20 }}
@@ -149,7 +136,6 @@ export default function MapingBus() {
                 </div>
               </motion.div>
 
-              {/* MAIN BUS IMAGE */}
               <motion.div
                 key={activeBus.id + "-img2"}
                 initial={{ opacity: 0, y: 20 }}
@@ -166,7 +152,6 @@ export default function MapingBus() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* FLOATING CARD */}
                 <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-xl rounded-lg px-3 py-2 shadow-md">
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center">
@@ -181,7 +166,6 @@ export default function MapingBus() {
               </motion.div>
             </div>
 
-            {/* RIGHT SIDE — hidden on small, shown md+ */}
             <motion.div
               key={activeBus.id + "-right"}
               initial={{ opacity: 0, x: 20 }}
@@ -198,7 +182,6 @@ export default function MapingBus() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-              {/* FEATURES */}
               <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-2">
                 {[
                   { icon: Bus, title: "LUXURY", subtitle: "PREMIUM COACH" },

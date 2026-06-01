@@ -11,7 +11,6 @@ const stats = [
 ];
 
 
-// ── Live count-up ──────────────────────────────────────────────────────────────
 function useCountUp(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -43,7 +42,6 @@ function StatItem({ num, label }) {
     return () => observer.disconnect();
   }, []);
 
-  // Extract leading number and suffix e.g. '12k+' -> num=12, suffix='k+'
   const match = num.match(/^(\d+\.?\d*)(.*)$/);
   const rawNum = match ? parseFloat(match[1]) : 0;
   const suffix = match ? match[2] : '';
@@ -69,11 +67,9 @@ function StatItem({ num, label }) {
   );
 }
 
-// ── Hero ───────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
   return (
     <div className="min-h-screen overflow-hidden relative">
-      {/* Background */}
       <Image
         src="/hero.png"
         alt="Hero background"
@@ -129,7 +125,6 @@ export default function HeroSection() {
 
       <div className="absolute inset-y-3 inset-x-0 rounded-[32px] border border-[#caf0f8]/10 pointer-events-none" />
 
-      {/* Wave Divider */}
       <div className="absolute bottom-[-20] left-0 w-full overflow-hidden leading-none" style={{ lineHeight: 0 }}>
         <svg viewBox="0 0 1440 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full" style={{ height: "140px", display: "block" }}>
           <defs>

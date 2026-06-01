@@ -21,9 +21,7 @@ export default function AboutCard() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Left — text */}
           <div className="flex-1">
-            {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, y: -16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,13 +33,11 @@ export default function AboutCard() {
               Who We Are
             </motion.div>
 
-            {/* Heading */}
             <h3 className="mt-3 text-2xl sm:text-3xl font-black text-black leading-tight">
               Vadodara's Trusted <br />
               <span className="text-[var(--text-red)]">Bus Travel Partner</span>
             </h3>
 
-            {/* Red divider */}
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />
 
             <p className="text-[var(--text-secondary)] text-sm  leading-relaxed">
@@ -51,7 +47,6 @@ export default function AboutCard() {
               From our base at Waghodia Road, Vadodara, we operate a modern fleet of AC and Non-AC buses — ranging from 20-seat luxury coaches to 56-seat sleeper buses — serving thousands of happy travellers every year.
             </p>
 
-            {/* Highlights */}
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {highlights.map((h) => (
                 <li key={h} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
@@ -61,7 +56,6 @@ export default function AboutCard() {
               ))}
             </ul>
 
-            {/* CTA */}
             <Link href="/about">
               <motion.button
                 whileHover={{ x: 3 }}
@@ -74,7 +68,6 @@ export default function AboutCard() {
             </Link>
           </div>
 
-          {/* Right — image grid */}
           <motion.div
             className="flex-shrink-0 w-full md:w-80"
             initial={{ opacity: 0, x: 40 }}
@@ -82,21 +75,17 @@ export default function AboutCard() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Decorative ring */}
             <div className="relative">
               <div className="absolute -top-3 -left-3 w-20 h-20 rounded-full border-2 border-[#C1121F]/50 pointer-events-none" />
               <div className="absolute -bottom-3 -right-3 w-14 h-14 rounded-full border-2 border-[#C1121F]/60 pointer-events-none" />
 
               <div className="grid grid-cols-2 gap-3" style={{ gridTemplateRows: "160px 130px" }}>
-                {/* top-left */}
                 <div className="relative overflow-hidden shadow-lg border-2 border-[var(--border-color)] z-10" style={{ borderRadius: "2rem 0.5rem 2rem 0.5rem" }}>
                   <Image src="/background.png" alt="Fleet" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
-                {/* right tall */}
                 <div className="relative row-span-2 z-10 overflow-hidden shadow-xl border-2 border-[var(--border-color)]" style={{ borderRadius: "0.5rem 2.5rem 0.5rem 2.5rem" }}>
                   <Image src="/img1.png" alt="Journey" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
-                {/* bottom-left */}
                 <div className="relative overflow-hidden shadow-md border-2 border-[var(--border-color)]" style={{ borderRadius: "1.5rem 0.5rem 0.5rem 1.5rem" }}>
                   <Image src="/img2.png" alt="Comfort" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>

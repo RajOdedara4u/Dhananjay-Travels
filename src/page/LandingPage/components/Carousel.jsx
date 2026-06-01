@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import DotGrid from "./DotGrid"
 
@@ -37,17 +36,14 @@ export default function Crousel() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
 
-    // clear
     ctx.clearRect(0, 0, SIZE, SIZE);
 
-    // outer border circle
     ctx.beginPath();
     ctx.arc(CX, CY, OUTER_R, 0, Math.PI * 2);
     ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // PIE SEGMENTS — white fill, red dividers
     for (let i = 0; i < N; i++) {
       const a1 = START + i * SLICE + GAP / 2;
       const a2 = START + (i + 1) * SLICE - GAP / 2;
@@ -58,7 +54,6 @@ export default function Crousel() {
       ctx.arc(CX, CY, INNER_R, a2, a1, true);
       ctx.closePath();
 
-      // alternating very subtle tint
       ctx.fillStyle ="#ffffff";
       ctx.fill();
 
@@ -67,7 +62,6 @@ export default function Crousel() {
       ctx.stroke();
     }
 
-    // spokes
     for (let i = 0; i < N; i++) {
       const a = START + i * SLICE;
       ctx.beginPath();
@@ -78,14 +72,12 @@ export default function Crousel() {
       ctx.stroke();
     }
 
-    // inner ring border
     ctx.beginPath();
     ctx.arc(CX, CY, INNER_R, 0, Math.PI * 2);
     ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // inner white disc
     ctx.beginPath();
     ctx.arc(CX, CY, INNER_R - 1, 0, Math.PI * 2);
     ctx.fillStyle = "white";
@@ -95,14 +87,9 @@ export default function Crousel() {
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative flex py-7 pt-10 flex-col items-center overflow-hidden max-w-[90%] mx-auto">
-      {/* decorative blobs */}
-
-      {/* heading */}
+    <section className="relative flex py-7 pt-10 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
        <div className="relative flex flex-col items-center text-center gap-0 pb-7">
   <DotGrid />
-
-  {/* Label */}
   <div className="flex items-center gap-2 mb-0 pb-2 md:pb-0">
     <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
     <span className="z-10 text-[10px] font-bold uppercase tracking-[0.32em] text-[#C1121F]">
@@ -111,7 +98,6 @@ export default function Crousel() {
     <span className="inline-block w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
   </div>
 
-  {/* Heading */}
   <div className="relative flex items-center justify-center gap-3">
     <Image
       src="/leftWing.png"
@@ -157,7 +143,6 @@ export default function Crousel() {
     />
   </div>
 
-  {/* Description */}
   <p className="z-10 mt-2 max-w-[380px] px-3 text-[13px] leading-[1.6] text-[#5F5F5F]">
     Leading companies trust{" "}
     <span className="font-semibold text-[#C1121F]">
@@ -167,7 +152,6 @@ export default function Crousel() {
   </p>
 </div>
 
-      {/* SPINNING WHEEL */}
       <div
         className="relative rounded-full"
         style={{
@@ -176,9 +160,7 @@ export default function Crousel() {
           boxShadow: "0 8px 48px 0 rgba(0, 0, 0, 0.1), 0 2px 16px 0 rgba(0,0,0,0.07)",
         }}
       >
-        {/* spinning part */}
         <div className="relative animate-spin-slow w-full h-full">
-          {/* CANVAS */}
           <canvas
             ref={canvasRef}
             width={SIZE}
@@ -186,7 +168,6 @@ export default function Crousel() {
             className="absolute inset-0 w-full h-full"
           />
 
-          {/* LOGOS */}
           {clients.map((client, i) => {
             const midAngle = START + (i + 0.5) * SLICE;
             const lx = CX + LOGO_R * Math.cos(midAngle);
@@ -217,7 +198,6 @@ export default function Crousel() {
           })}
         </div>
 
-        {/* CENTER CIRCLE — outside spinning div, stays still */}
         <div
           className="absolute rounded-full z-20 flex items-center justify-center size-110"
           style={{
@@ -238,7 +218,6 @@ export default function Crousel() {
         </div>
       </div>
 
-      {/* bottom tagline */}
       <p className="mt-7 text-sm text-gray-400 tracking-wide z-10">
         Trusted by <span className="text-red-500 font-semibold">100+</span> happy clients across India
       </p>

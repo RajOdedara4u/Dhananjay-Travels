@@ -1,10 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Building2,  Camera, Compass,ArrowRight, 
-Bus, GraduationCap, PartyPopper,
-} from "lucide-react";
+import { Building2,  Camera, Compass,ArrowRight, Bus, GraduationCap, PartyPopper } from "lucide-react";
 import {ServiceCard} from "../../../components";
 
 const services = [
@@ -90,7 +87,6 @@ const services = [
 export default function ServiceSeaction() {
   return (
     <section className="relative overflow-hidden py-7 max-w-[90%] mx-auto">
-        {/* heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,14 +129,12 @@ export default function ServiceSeaction() {
           </p>
         </motion.div>
 
-        {/* grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}
         </div>
 
-        {/* View All CTA */}
        <motion.div
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}

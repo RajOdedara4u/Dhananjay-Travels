@@ -46,7 +46,7 @@ function WaveDivider({ hovered }) {
         boxShadow: hovered
           ? "0 20px 44px rgba(101,72,42,0.17)"
           : "0 2px 12px rgba(101,72,42,0.08)",
-        overflow: "visible",          // let icon overflow the image bottom
+        overflow: "visible",
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -56,7 +56,6 @@ function WaveDivider({ hovered }) {
         overflow: "hidden",
       }}
     >
-      {/* ── Image strip ──────────────────────────────────────────────────── */}
       <div
         style={{
           position: "relative",
@@ -66,7 +65,6 @@ function WaveDivider({ hovered }) {
           flexShrink: 0,
         }}
       >
-        {/* Photo */}
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", transition: "transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)", transform: hovered ? "scale(1.07)" : "scale(1.01)" }}>
           <Image
             src={service.cardImage}
@@ -76,7 +74,6 @@ function WaveDivider({ hovered }) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        {/* Bottom white shadow fade — image bleeds into card */}
         <div
           style={{
             position: "absolute",
@@ -89,14 +86,12 @@ function WaveDivider({ hovered }) {
           }}
         />
 
-        {/* Tag pill */}
       <span
   className="absolute top-[10px] left-3 text-[9px] tracking-[0.16em] uppercase text-[var(--text-primary)] bg-[#C1121F] border border-[rgba(196,168,130,0.55)] px-2 py-[3px] rounded-full font-medium"
 >
           {service.tag}
         </span>
 
-        {/* Icon — centred, overlapping the image / card boundary */}
       <motion.div
   transition={{ type: "spring", stiffness: 320, damping: 22 }}
   className={`
@@ -119,31 +114,26 @@ function WaveDivider({ hovered }) {
 </motion.div>
       </div>
 
-      {/* ── Card body ────────────────────────────────────────────────────── */}
       <div
         style={{
-          padding: "36px 18px 18px", // 36px top gives room for the overlapping icon
+          padding: "36px 18px 18px", 
           display: "flex",
           flexDirection: "column",
           flex: 1,
         }}
       >
      
-        {/* Title */}
       <h3
   className="text-[18px] font-bold text-black leading-[1.2] mb-[7px]"
 >
   {service.title}
 </h3>
 
-{/* Description */}
 <p className="text-[11.5px] text-black/80 leading-[1.6] font-light mb-[14px]">
   {service.short}
 </p>
-{/* Accent rule */}
 <div className="w-8 h-[1.5px]  rounded-sm mb-3" />
 
-        {/* Features 2-col grid */}
    <ul className="list-none p-0 grid grid-cols-2 gap-y-[5px] gap-x-2 mb-4 flex-1">
   {service.features.map((f) => (
     <li
@@ -157,7 +147,6 @@ function WaveDivider({ hovered }) {
 </ul>
 <WaveDivider />
 
-        {/* CTA */}
     <div className="flex items-center justify-between ">
   
   <span className="text-[10px] font-medium  tracking-[0.12em] uppercase text-[var(--text-red)]">

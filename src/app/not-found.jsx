@@ -7,16 +7,11 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden relative px-4">
 
-      {/* ── Background decorations ── */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* top-left blob */}
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#C1121F]/5" />
-        {/* bottom-right blob */}
         <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#C1121F]/5" />
-        {/* top-right small */}
         <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#C1121F]/5" />
 
-        {/* dot grid top-right */}
         <svg className="absolute top-8 right-8 opacity-10" width="120" height="120" viewBox="0 0 120 120">
           {[0, 20, 40, 60, 80, 100].map(x =>
             [0, 20, 40, 60, 80, 100].map(y => (
@@ -25,7 +20,6 @@ export default function NotFound() {
           )}
         </svg>
 
-        {/* dot grid bottom-left */}
         <svg className="absolute bottom-8 left-8 opacity-10" width="100" height="100" viewBox="0 0 100 100">
           {[0, 20, 40, 60, 80].map(x =>
             [0, 20, 40, 60, 80].map(y => (
@@ -34,14 +28,11 @@ export default function NotFound() {
           )}
         </svg>
 
-        {/* thin red top border */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C1121F] to-transparent" />
       </div>
 
-      {/* ── Main content ── */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full">
 
-        {/* 404 big number */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,7 +45,6 @@ export default function NotFound() {
           >
             404
           </span>
-          {/* ghost shadow text */}
           <span
             className="absolute inset-0 font-black text-[#C1121F]/5 leading-none select-none"
             style={{ fontSize: "clamp(100px, 22vw, 180px)", letterSpacing: "-0.04em", transform: "translate(6px, 6px)" }}
@@ -64,16 +54,13 @@ export default function NotFound() {
           </span>
         </motion.div>
 
-        {/* ── Road + Bus scene ── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative w-full max-w-md h-24 -mt-4 mb-2"
         >
-          {/* Road */}
           <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#1f2937] rounded-2xl overflow-hidden">
-            {/* road dashes */}
             <motion.div
               className="absolute top-1/2 -translate-y-1/2 h-[3px]"
               style={{
@@ -84,12 +71,10 @@ export default function NotFound() {
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
-            {/* road edge lines */}
             <div className="absolute top-1 left-0 right-0 h-[2px] bg-[#C1121F]/40 rounded-full" />
             <div className="absolute bottom-1 left-0 right-0 h-[2px] bg-[#C1121F]/40 rounded-full" />
           </div>
 
-          {/* Moving scenery — poles */}
           {[0, 160, 320].map((offset, i) => (
             <motion.div
               key={i}
@@ -103,7 +88,6 @@ export default function NotFound() {
             </motion.div>
           ))}
 
-          {/* Bus */}
           <motion.div
             className="absolute bottom-10"
             style={{ left: "50%", x: "-50%" }}
@@ -111,51 +95,38 @@ export default function NotFound() {
             transition={{ duration: 0.45, repeat: Infinity, ease: "easeInOut" }}
           >
             <svg width="100" height="52" viewBox="0 0 100 52" fill="none">
-              {/* body */}
               <rect x="3" y="6" width="90" height="34" rx="6" fill="#C1121F" />
-              {/* roof */}
               <rect x="3" y="6" width="90" height="8" rx="6" fill="#a30f1a" />
-              {/* front */}
               <rect x="80" y="10" width="13" height="26" rx="3" fill="#a30f1a" />
-              {/* windshield */}
               <rect x="81" y="12" width="10" height="12" rx="2" fill="#bfdbfe" opacity="0.9" />
               <rect x="82" y="13" width="3" height="4" rx="1" fill="white" opacity="0.5" />
-              {/* windows */}
               {[10, 26, 42, 58].map((x, i) => (
                 <g key={i}>
                   <rect x={x} y="12" width="12" height="10" rx="2" fill="#bfdbfe" opacity="0.85" />
                   <rect x={x + 1} y="13" width="4" height="4" rx="1" fill="white" opacity="0.4" />
                 </g>
               ))}
-              {/* headlight */}
               <motion.rect x="91" y="22" width="6" height="4" rx="1.5" fill="#fef08a"
                 animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 0.5, repeat: Infinity }} />
-              {/* tail light */}
               <rect x="3" y="22" width="4" height="4" rx="1.5" fill="#fca5a5" />
-              {/* bottom bar */}
               <rect x="3" y="38" width="90" height="3" rx="1.5" fill="#7f1d1d" />
-              {/* exhaust */}
               <motion.circle cx="6" cy="41" r="2.5" fill="#9ca3af"
                 animate={{ cx: [6, -8], opacity: [0.5, 0], r: [2.5, 5] }}
                 transition={{ duration: 0.6, repeat: Infinity, ease: "easeOut" }} />
-              {/* wheel wells */}
               <rect x="12" y="39" width="20" height="8" rx="4" fill="#111827" />
               <rect x="66" y="39" width="20" height="8" rx="4" fill="#111827" />
-              {/* wheels */}
               <BusWheel cx={22} cy={46} />
               <BusWheel cx={76} cy={46} />
             </svg>
           </motion.div>
         </motion.div>
 
-        {/* ── Text content ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-4"
         >
-          {/* eyebrow */}
           <div className="flex items-center justify-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] rounded-full bg-[#C1121F]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#C1121F]">
@@ -174,7 +145,6 @@ export default function NotFound() {
           </p>
         </motion.div>
 
-        {/* ── CTA buttons ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

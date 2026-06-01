@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Colors */
   --background-primary: #ffffff;
   --background-secondary: #C1121F;
 
@@ -10,13 +9,11 @@
   --text-red: #C1121F;
 }
 
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-/* Global styles */
 body {
   background: var(--background-primary);
   color: var(--text-secondary);
@@ -24,15 +21,11 @@ body {
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-
-
-/* Selection */
 ::selection {
   background: var(--background-secondary);
   color: white;
 }
 
-/* Hide scrollbar */
 @layer utilities {
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -71,4 +64,3 @@ body {
 .animate-reverse-spin {
   animation: reverseSpin 25s linear infinite;
 }
-

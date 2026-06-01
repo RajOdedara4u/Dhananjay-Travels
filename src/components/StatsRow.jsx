@@ -36,13 +36,10 @@ return (
       }}
       className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg px-3 py-4 text-center shadow-[0_6px_20px_rgba(0,0,0,0.06)]"
     >
-      {/* Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#C1121F]/10 via-white/5 to-[#780000]/10 opacity-0 group-hover:opacity-100 transition duration-500" />
 
-      {/* Small Blur */}
       <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#C1121F]/15 blur-2xl rounded-full" />
 
-      {/* Icon */}
       <motion.div
         whileHover={{ rotate: 5, scale: 1.05 }}
         transition={{ type: "spring", stiffness: 200 }}
@@ -54,17 +51,14 @@ return (
         />
       </motion.div>
 
-      {/* Number */}
       <h3 className="relative z-10 text-xl sm:text-2xl font-black tracking-tight text-[#1A1A1A] leading-none">
         {num}
       </h3>
 
-      {/* Label */}
       <p className="relative z-10 mt-1 text-[11px] sm:text-xs font-medium tracking-wide text-[#666] leading-tight">
         {label}
       </p>
 
-      {/* Shine */}
       <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#C1121F] to-transparent opacity-40 group-hover:opacity-100 transition duration-500" />
     </motion.div>
   ))}

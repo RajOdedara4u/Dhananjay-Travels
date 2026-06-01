@@ -1,35 +1,27 @@
 "use client";
 import { motion} from "framer-motion";
 import { useRef} from "react";
+import { Bus, MapPin, ShieldCheck, PlaneTakeoff, Sparkles } from "lucide-react";
 import MapingBus from "../LandingPage/components/MapingBus";
-import {
-  Building2, Bus, MapPin, GraduationCap, PartyPopper,
-  Camera, Compass, ShieldCheck, PlaneTakeoff, Star, ArrowRight, CheckCircle2, Sparkles
-} from "lucide-react";
 
-export default function BusOptionsPage() {
+export default function BusesPage() {
   const heroRef = useRef(null);
 
   return (
     <div className="  font-sans overflow-hidden">
 
-      {/* ── HERO ── */}
       <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
-        {/* bg image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-100"
           style={{ backgroundImage: "url('/background.png')" }}
         />
-        {/* gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b via-black/60 to-black/90" />
 
-        {/* animated blobs */}
         <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 6, repeat: Infinity }}
           className="absolute top-[-80px] left-[-80px] w-80 h-80 rounded-full bg-[#48cae4]/20 blur-3xl pointer-events-none" />
         <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 8, repeat: Infinity, delay: 2 }}
           className="absolute bottom-[-60px] right-[-60px] w-96 h-96 rounded-full bg-[#0077b6]/25 blur-3xl pointer-events-none" />
 
-        {/* floating icons */}
         {[Bus, MapPin, PlaneTakeoff, ShieldCheck].map((Icon, i) => (
           <motion.div
             key={i}
@@ -45,7 +37,6 @@ export default function BusOptionsPage() {
           </motion.div>
         ))}
 
-        {/* content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pb-16" ref={heroRef}>
 
           <motion.div
@@ -79,7 +70,6 @@ export default function BusOptionsPage() {
           </motion.div>
         </div>
 
-        {/* torn paper bottom */}
         <div className="absolute bottom-0 left-0 w-full z-20" style={{ lineHeight: 0 }}>
           <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ height: "70px", display: "block", width: "100%" }}>
             <path d="M0,35 C60,15 90,52 140,34 C190,16 220,48 270,30 C320,12 360,46 410,28 C460,10 500,44 550,26 C600,8 640,42 690,24 C740,6 780,40 830,22 C880,4 920,38 970,20 C1020,2 1060,36 1110,18 C1160,0 1200,34 1250,16 C1300,0 1360,30 1400,18 C1420,12 1432,22 1440,18 L1440,70 L0,70 Z" fill="white" />
