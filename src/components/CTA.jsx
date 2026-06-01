@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Phone } from "lucide-react";
-import { FaBus, FaRoute, FaUsers, FaHeadset } from "react-icons/fa";
 
 const CTA = () => <>
       <motion.div

@@ -3,34 +3,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import WaveDivider from "../WaveDivider";
 
 export default function ServiceCard({ service, index, total = 6 }) {
   const [hovered, setHovered] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const Icon = service.icon;
-  
-
-
-
-
-function WaveDivider({ hovered }) {
-  return (
-    <svg
-      viewBox="0 0 200 10" preserveAspectRatio="none"
-      style={{ width: "100%", height: 10, display: "block", margin: "12px 0" }}
-    >
-      <path
-        d="M0,5 Q25,0 50,5 Q75,10 100,5 Q125,0 150,5 Q175,10 200,5"
-        stroke={hovered ? "#C1121F" : "#f1b5ba"}
-        strokeWidth="1.5"
-        fill="none"
-        strokeLinecap="round"
-        style={{ transition: "stroke 0.4s" }}
-      />
-    </svg>
-  );
-}
 
   return (
     <motion.article
@@ -148,7 +127,6 @@ function WaveDivider({ hovered }) {
 <WaveDivider />
 
     <div className="flex items-center justify-between ">
-  
   <span className="text-[10px] font-medium  tracking-[0.12em] uppercase text-[var(--text-red)]">
     Explore
   </span>

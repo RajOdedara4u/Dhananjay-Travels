@@ -1,29 +1,11 @@
 "use client";
 import Link from "next/link";
-import { Phone, MapPin, Mail, BusIcon } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
 import WaveDivider from "../WaveDivider"; 
-function DotPattern() {
-  return (
-    <svg width="140" height="100" viewBox="0 0 140 100" fill="none"
-      style={{ position: "absolute", top: 16, right: 16, opacity: 0.08, pointerEvents: "none" }}>
-      {[0, 18, 36, 54, 72, 90, 108, 126].map(x =>
-        [0, 18, 36, 54, 72, 90].map(y => (
-          <circle key={`${x}-${y}`} cx={x + 5} cy={y + 5} r="1.8" fill="#C1121F" />
-        ))
-      )}
-    </svg>
-  );
-}
-function CornerCircles() {
-  return (
-    <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
-      style={{ position: "absolute", bottom: 0, left: 0, opacity: 0.04, pointerEvents: "none" }}>
-      <circle cx="0" cy="120" r="80" stroke="#C1121F" strokeWidth="1.5" fill="none" />
-      <circle cx="0" cy="120" r="50" stroke="#C1121F" strokeWidth="1" fill="none" />
-      <circle cx="0" cy="120" r="25" stroke="#C1121F" strokeWidth="0.8" fill="none" />
-    </svg>
-  );
-}
+import DotPattern from "../DotPattern";
+import CornerCircles from "../CornerCircles";
+
+
 const CURRENT_YEAR = new Date().getFullYear();
 
 const navLinks = [
@@ -38,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="py-3" style={{ position: "relative"}}>
       <div style={{ position: "relative", overflow: "hidden" }}>
-      <WaveDivider />
+        <WaveDivider />
         <DotPattern />
         <CornerCircles />
 

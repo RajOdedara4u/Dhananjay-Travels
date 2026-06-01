@@ -1,7 +1,7 @@
 "use client";
 import { motion} from "framer-motion";
 import { useRef} from "react";
-import {ServiceCard} from "../../components";
+import {ServiceCard, TronPaperDevider} from "../../components";
 import { Building2, Bus, MapPin, GraduationCap, PartyPopper,
   Camera, Compass, ShieldCheck, PlaneTakeoff, Sparkles
 } from "lucide-react";
@@ -128,8 +128,8 @@ export default function ServicesPage() {
 
       <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-100"
-          style={{ backgroundImage: "url('/background.png')" }}
+          className="absolute inset-0 bg-cover bg-bottom md:bg-center opacity-100"
+          style={{ backgroundImage: "url('/D3.jpeg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b via-black/60 to-black/90" />
 
@@ -171,7 +171,7 @@ export default function ServicesPage() {
                 </svg>
               </span>
             </h2>
-            <p className=" mt-4 text-sm sm:text-base max-w-xl mx-auto">
+            <p className=" mt-4 text-[0.7rem] md:text-[1rem] sm:text-base max-w-sm md:max-w-lg mx-auto">
               Specialized services specially designed to move people safely, comfortably, and on time — every single trip.
             </p>
           </motion.div>
@@ -187,9 +187,7 @@ export default function ServicesPage() {
         </div>
 
         <div className="absolute bottom-0 left-0 w-full z-20" style={{ lineHeight: 0 }}>
-          <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ height: "70px", display: "block", width: "100%" }}>
-            <path d="M0,35 C60,15 90,52 140,34 C190,16 220,48 270,30 C320,12 360,46 410,28 C460,10 500,44 550,26 C600,8 640,42 690,24 C740,6 780,40 830,22 C880,4 920,38 970,20 C1020,2 1060,36 1110,18 C1160,0 1200,34 1250,16 C1300,0 1360,30 1400,18 C1420,12 1432,22 1440,18 L1440,70 L0,70 Z" fill="white" />
-          </svg>
+<TronPaperDevider />
         </div>
       </div>
 

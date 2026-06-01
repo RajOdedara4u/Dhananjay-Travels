@@ -1,5 +1,5 @@
 export {default as ServicePage} from "./ServicesPage/ServicesPage"
 export {default as ContactPage} from "./ContactPage/ContactPage"
-export {default as BusOptionsPage} from "./BusesPage/BusesPage"
+export {default as BusesPage} from "./BusesPage/BusesPage"
 export {default as LandingPage} from "./LandingPage/LandingPage"
 export {default as AboutPage} from "./AboutPage/AboutPage"

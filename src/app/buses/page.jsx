@@ -1,7 +1,7 @@
-import {BusOptionsPage} from "../../page"
+import {BusesPage} from "../../page"
 
 const page=()=>{
-return <BusOptionsPage />
+return <BusesPage />
 }
 
 export default page

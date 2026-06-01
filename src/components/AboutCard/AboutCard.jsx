@@ -3,13 +3,7 @@ import { motion } from "framer-motion";
 import { Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const highlights = [
-  "50+ well-maintained AC & Non-AC buses",
-  "Experienced, licensed & courteous drivers",
-  "GPS-tracked fleet for safety",
-  "Trusted by 200+ corporate clients",
-];
+import { highlights } from "./highlights";
 
 export default function AboutCard() {
   return (
@@ -27,7 +21,7 @@ export default function AboutCard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#C1121F]/10 border border-[#C1121F]/20 text-[var(--text-secondary)] text-xs font-bold tracking-widest px-4 py-2 rounded-full"
+              className="inline-flex text-[0.7rem] items-center gap-2 bg-[#C1121F]/10 border border-[#C1121F]/20 text-[var(--text-secondary)] text-xs font-bold tracking-widest px-4 py-2 rounded-full"
             >
               <Sparkles size={12} />
               Who We Are
@@ -40,16 +34,16 @@ export default function AboutCard() {
 
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />
 
-            <p className="text-[var(--text-secondary)] text-[0.7rem] md:text-[0.9rem] leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-[0.8rem] md:text-[0.9rem] leading-relaxed">
               Dhananjay Travels is a Vadodara-based travel agency specialising in premium bus services across Gujarat and India. Founded with a passion for safe, comfortable, and reliable journeys, we have grown into one of the most trusted names in group travel, corporate transportation, and pilgrimage tours.
             </p>
-            <p className="mt-3 text-[var(--text-secondary)] text-[0.7rem] md:text-[0.9rem] leading-relaxed">
+            <p className="mt-3 text-[var(--text-secondary)] text-[0.8rem] md:text-[0.9rem] leading-relaxed">
               From our base at Waghodia Road, Vadodara, we operate a modern fleet of AC and Non-AC buses — ranging from 20-seat luxury coaches to 56-seat sleeper buses — serving thousands of happy travellers every year.
             </p>
 
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {highlights.map((h) => (
-                <li key={h} className="flex text-[0.6rem] md:text-[0.8rem] items-center gap-2 text-sm text-[var(--text-secondary)]">
+                <li key={h} className="flex text-[0.7rem] md:text-[0.8rem] items-center gap-2 text-sm text-[var(--text-secondary)]">
                   <CheckCircle2 size={14} className="text-[var(--text-red)] flex-shrink-0 " />
                   {h}
                 </li>
@@ -60,7 +54,7 @@ export default function AboutCard() {
               <motion.button
                 whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400 }}
-                className="mt-5 inline-flex items-center gap-2 bg-[#C1121F] hover:bg-[#A30F1A] text-white text-sm font-semibold px-4 py-3 rounded-full shadow-black/10 hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] transition-all duration-300"
+                className="mt-5 inline-flex items-center gap-2 bg-[#C1121F] hover:bg-[#A30F1A] text-white text-[0.7rem]  font-semibold px-4 py-3 rounded-full shadow-black/10 hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] transition-all duration-300"
               >
                 Learn More About Us
                 <ArrowRight size={15} />

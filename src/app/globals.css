@@ -21,10 +21,6 @@ body {
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-::selection {
-  background: var(--background-secondary);
-  color: white;
-}
 
 @layer utilities {
   .scrollbar-hide {

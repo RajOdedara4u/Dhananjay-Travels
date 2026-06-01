@@ -4,8 +4,9 @@ import { Header, Footer } from "../components";
 import { FloatingWhatsApp } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Dhananjay Travels",
-  description: "Luxury travel experiences",
+  title: "Dhananjay Travels | Corporate & Luxury Bus Rental Services",
+  description:
+    "Dhananjay Travels provides reliable bus rental services for corporate transportation, employee shuttles, industrial travel, events, school trips, and group tours. Safe, comfortable, and professionally managed fleet.",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className="min-h-full overflow-x-hidden">
         <Header />
         <main className="flex-1">
-              <FloatingWhatsApp />
+        <FloatingWhatsApp />
           {children}
         </main>
 <Footer />
