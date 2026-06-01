@@ -19,6 +19,18 @@ const services = [
     accent: "#0077b6",
   cardImage:"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop",
    },
+    {
+    icon: GraduationCap,
+    title: "School & College Transport",
+    short: "Safe, disciplined transport for educational institutions.",
+    description: "Student safety is our top priority. Verified drivers, fixed routes, and timely operations ensure parents and institutions trust us completely.",
+    features: ["Verified drivers", "Student safety first", "Fixed route management", "Timely pickup & drop"],
+    tag: "Trusted",
+    color: "from-[#0077b6] to-[#48cae4]",
+    light: "bg-[#e0f7fa]",
+    accent: "#0077b6",
+    cardImage:"https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
+  },
   {
     icon: Bus,
     title: "Luxury Bus Rental",
@@ -44,20 +56,7 @@ const services = [
   accent: "#00b4d8",
   cardImage:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop",
   },
-  {
-    icon: GraduationCap,
-    title: "School & College Transport",
-    short: "Safe, disciplined transport for educational institutions.",
-    description: "Student safety is our top priority. Verified drivers, fixed routes, and timely operations ensure parents and institutions trust us completely.",
-    features: ["Verified drivers", "Student safety first", "Fixed route management", "Timely pickup & drop"],
-    tag: "Trusted",
-    color: "from-[#0077b6] to-[#48cae4]",
-    light: "bg-[#e0f7fa]",
-    accent: "#0077b6",
-  cardImage:"https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=800&auto=format&fit=crop",
-
-  },
-  {
+   {
     icon: PartyPopper,
     title: "Wedding & Event Transport",
     short: "Seamless guest transportation for your special day.",
@@ -67,8 +66,7 @@ const services = [
     color: "from-[#48cae4] to-[#90e0ef]",
     light: "bg-[#e0f7fa]",
     accent: "#48cae4",
-  cardImage:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop",
-
+    cardImage:"https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
   },
   {
     icon: Camera,
@@ -93,9 +91,8 @@ const services = [
     color: "from-[#0077b6] to-[#00b4d8]",
     light: "bg-[#e0f7fa]",
     accent: "#0077b6",
-  cardImage:"https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
-
-  },
+    cardImage:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop",
+   },
   {
     icon: ShieldCheck,
     title: "Professional Drivers & Fleet",
@@ -106,7 +103,7 @@ const services = [
     color: "from-[#00b4d8] to-[#48cae4]",
     light: "bg-[#e0f7fa]",
     accent: "#00b4d8",
-  cardImage:"https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
+    cardImage:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop",
   },
   {
     icon: PlaneTakeoff,
@@ -117,8 +114,9 @@ const services = [
     tag: "Express",
     color: "from-[#03045e] to-[#0077b6]",
     light: "bg-[#e8eaf6]",
-    accent: "#03045e",
-  cardImage:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop",
+    accent: "#03045e", 
+    cardImage:"https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=800&auto=format&fit=crop",
+
   },
 ];
 
