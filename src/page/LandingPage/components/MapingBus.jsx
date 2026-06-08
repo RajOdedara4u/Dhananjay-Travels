@@ -2,77 +2,99 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { Bus, ShieldCheck, MapPinned } from "lucide-react";
+import { Bus, ShieldCheck, MapPinned, Armchair, Zap, Wind } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const buses = [
   {
     id: "A",
-    name: "Luxury Sleeper",
+    name: "20 Seat Premium Coach",
     seats: 20,
     type: "PREMIUM",
-    category: "AC COACH",
+    category: "2×1 AC",
     images: ["/D1.jpeg", "/D2.jpeg", "/D3.jpeg"],
   },
   {
     id: "B",
-    name: "Executive Coach",
-    seats: 30,
-    type: "BUSINESS",
-    category: "SEMI SLEEPER",
-    images: ["/F1.jpeg", "/F2.jpeg", "/F3.jpeg"],
+    name: "25 Seater Bus",
+    seats: 25,
+    type: "STANDARD",
+    category: "2×2 AC",
+     images: ["/G1.jpeg", "/G2.jpeg", "/G3.jpeg"],
   },
   {
     id: "C",
-    name: "Mini Luxury",
-    seats: 40,
+    name: "29 Seater Bus",
+    seats: 29,
     type: "STANDARD",
-    category: "MINI BUS",
-    images: ["/B1.jpeg", "/B2.jpeg", "/B3.jpeg"],
+    category: "2×2 AC",
+    images: ["/F1.jpeg", "/F2.jpeg", "/F3.jpeg"],
   },
   {
     id: "D",
-    name: "Royal Cruiser",
-    seats: 50,
-    type: "LUXURY",
-    category: "MULTI AXLE",
-    images: ["/A1.jpeg", "/A2.jpeg", "/A3.jpeg"],
+    name: "37 Seater Bus",
+    seats: 37,
+    type: "EXECUTIVE",
+    category: "2×2 AC",
+    images: ["/E1.jpeg", "/E2.jpeg", "/E3.jpeg"],
   },
   {
     id: "E",
-    name: "Grand Sleeper",
-    seats: 60,
-    type: "ULTRA",
-    category: "VOLVO AC",
+    name: "56 Seater Deluxe AC",
+    seats: 56,
+    type: "DELUXE",
+    category: "3×2 AC",
+    images: ["/A1.jpeg", "/A2.jpeg", "/A3.jpeg"],
+  },
+  {
+    id: "F",
+    name: "56 Seater Deluxe",
+    seats: 56,
+    type: "DELUXE",
+    category: "3×2 NON AC",
+    images: ["/B1.jpeg", "/B2.jpeg", "/B3.jpeg"],
+     },
+  {
+    id: "G",
+    name: "56 Seater Standard",
+    seats: 56,
+    type: "STANDARD",
+    category: "3×2 NON AC",
     images: ["/H1.jpeg", "/H2.jpeg", "/H3.jpeg"],
   },
 ];
 
+
 export default function MapingBus() {
-  const [activeSeat, setActiveSeat] = useState(40);
+  const [activeId, setActiveId] = useState(buses[0].id);
 
   const activeBus = useMemo(() => {
-    return buses.find((b) => b.seats === activeSeat);
-  }, [activeSeat]);
+    return buses.find((b) => b.id === activeId);
+  }, [activeId]);
 
   return (
     <section className="w-full pb-8 overflow-hidden">
       <div className="max-w-5xl mx-auto md:px-4">
 
-        <div className="flex items-center justify-center gap-1 md:gap-4 flex-wrap">
-          {buses.map((bus) => (
-            <button
-              key={bus.id}
-              onClick={() => setActiveSeat(bus.seats)}
-              className={`relative px-3 py-1.5 rounded-full text-[0.6rem] sm:text-[0.7rem]] md:text-sm font-medium transition-all duration-300 ${
-                activeSeat === bus.seats
-                  ? "bg-white shadow-[0_6px_18px_rgba(0,0,0,0.1)] text-black"
-                  : "text-gray-500 hover:text-black"
-              }`}
-            >
-              {bus.seats} seat
-            </button>
-          ))}
+        <div className="flex items-center justify-center gap-1.5 md:gap-2 flex-wrap mb-5">
+          {buses.map((bus) => {
+            const Icon = bus.icon;
+            const isActive = activeId === bus.id;
+            return (
+              <button
+                key={bus.id}
+                onClick={() => setActiveId(bus.id)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.6rem] sm:text-[0.7rem] md:text-xs font-semibold border transition-all duration-300 ${
+                  isActive
+                    ? "bg-red-600 text-white border-red-600 shadow-md shadow-red-200"
+                    : "bg-white text-gray-500 border-gray-200 hover:border-red-300 hover:text-red-500"
+                }`}
+              >
+                <Armchair size={11} />
+                <span>{bus.seats}</span>
+              </button>
+            );
+          })}
         </div>
 
         <AnimatePresence mode="wait">

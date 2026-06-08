@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import DotGrid from "./DotGrid"
 
@@ -19,7 +19,15 @@ export default function Crousel() {
   
   const canvasRef = useRef(null);
 
-  const SIZE = 540;
+  const [SIZE, setSIZE] = useState(350);
+
+  useEffect(() => {
+    const update = () => setSIZE(window.innerWidth >= 768 ? 500 : 350);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  
   const CX = SIZE / 2;
   const CY = SIZE / 2;
 
@@ -81,15 +89,12 @@ export default function Crousel() {
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(CX, CY, INNER_R - 1, 0, Math.PI * 2);
-    ctx.fillStyle = "white";
-    ctx.fill();
-  }, []);
+  }, [SIZE, CX, CY, OUTER_R, INNER_R, N, SLICE, GAP, START]);
 
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative flex py-7 pt-10 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
+    <section className="relative flex py-15 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
        <div className="relative flex flex-col items-center text-center gap-0 pb-7">
   <DotGrid />
   <div className="flex items-center gap-2 mb-0 pb-2 md:pb-0">

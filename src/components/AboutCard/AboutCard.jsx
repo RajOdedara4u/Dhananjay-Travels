@@ -7,7 +7,7 @@ import { highlights } from "./highlights";
 
 export default function AboutCard() {
   return (
-    <section className="py-7 max-w-[90%] mx-auto">
+    <section className="sm:pb-17 max-w-[90%] mx-auto">
         <motion.div
           className="flex flex-col md:flex-row items-center gap-12"
           initial={{ opacity: 0, y: 40 }}
@@ -16,17 +16,6 @@ export default function AboutCard() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex-1">
-            <motion.div
-              initial={{ opacity: 0, y: -16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex text-[0.7rem] items-center gap-2 bg-[#C1121F]/10 border border-[#C1121F]/20 text-[var(--text-secondary)] text-xs font-bold tracking-widest px-4 py-2 rounded-full"
-            >
-              <Sparkles size={12} />
-              Who We Are
-            </motion.div>
-
             <h3 className="mt-3 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] font-black text-black leading-tight">
               Vadodara's Trusted <br />
               <span className="text-[var(--text-red)]">Bus Travel Partner</span>
@@ -43,7 +32,7 @@ export default function AboutCard() {
 
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {highlights.map((h) => (
-                <li key={h} className="flex text-[0.7rem] md:text-[0.8rem] items-center gap-2 text-sm text-[var(--text-secondary)]">
+                <li key={h} className="flex text-[0.77rem] md:text-[0.87rem] items-center gap-2 text-sm text-[var(--text-secondary)]">
                   <CheckCircle2 size={14} className="text-[var(--text-red)] flex-shrink-0 " />
                   {h}
                 </li>
@@ -54,7 +43,7 @@ export default function AboutCard() {
               <motion.button
                 whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400 }}
-                className="mt-5 inline-flex items-center gap-2 bg-[#C1121F] hover:bg-[#A30F1A] text-white text-[0.7rem]  font-semibold px-4 py-3 rounded-full shadow-black/10 hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] transition-all duration-300"
+                className="mt-5 inline-flex items-center gap-2 bg-[#C1121F] hover:bg-[#A30F1A] text-white text-[0.77rem]  font-semibold px-4 py-3 rounded-full shadow-black/10 hover:shadow-[0_12px_32px_rgba(193,18,31,0.4)] transition-all duration-300"
               >
                 Learn More About Us
                 <ArrowRight size={15} />

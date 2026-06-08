@@ -18,7 +18,7 @@ body {
   background: var(--background-primary);
   color: var(--text-secondary);
   overflow-x: hidden;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 

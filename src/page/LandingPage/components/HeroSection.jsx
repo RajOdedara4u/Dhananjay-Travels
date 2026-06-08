@@ -1,145 +1,201 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
-const stats = [
-  { num: '10+', label: 'Years' },
-  { num: '48',  label: 'Destinations' },
-  { num: '12k+', label: 'Travellers' },
-  { num: '4.9★', label: 'Rating' },
+import { AnimatePresence, motion } from "framer-motion";
+import { Star } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+function useCountUp(target, decimals = 0, duration = 1500) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    const mounted = { current: true };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      const start = performance.now();
+      const tick = (now) => {
+        if (!mounted.current) return;
+        const progress = Math.min((now - start) / duration, 1);
+        const value = progress * target;
+        setCount(decimals ? parseFloat(value.toFixed(decimals)) : Math.floor(value));
+        if (progress < 1) requestAnimationFrame(tick);
+        else setCount(target);
+      };
+      requestAnimationFrame(tick);
+    });
+    if (ref.current) observer.observe(ref.current);
+    return () => { mounted.current = false; observer.disconnect(); };
+  }, [target, decimals, duration]);
+  return { count, ref };
+}
+
+function CountUp({ target, suffix = "", decimals = 0 }) {
+  const { count, ref } = useCountUp(target, decimals);
+  return <span ref={ref}>{count}{suffix}</span>;
+}
+
+const slides = [
+  { bg: "/bg3.png", word: "BUSINESS",   sub: "WE MOVE YOUR BUSINESS FORWARD" },
+  { bg: "/bg2.png", word: "EXCELLENCE", sub: "DELIVERING EXCELLENCE ON EVERY ROUTE" },
+  { bg: "/bg4.png", word: "ENTERPRISE", sub: "TRUSTED BY LEADING ENTERPRISES" },
+  { bg: "/bg1.png", word: "CORPORATE",  sub: "PREMIUM CORPORATE TRAVEL SOLUTIONS" },
+  { bg: "/bg5.png", word: "JOURNEYS",   sub: "CRAFTING SEAMLESS JOURNEYS DAILY" },
 ];
 
+export default function HeroSection() {
+  const stats = [
+    { target: 10,  suffix: "+", title: "YEARS SERVING CORPORATES"},
+    { target: 50,  suffix: "+", title: "BUSES IN FLEET"},
+    { target: 4.9, suffix: "",  decimals: 1, title: "GOOGLE RATING"},
+    { target: 200, suffix: "+", title: "COMPANIES TRUST US"},
+  ];
 
-function useCountUp(target, duration = 2000, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime = null;
-    const num = parseFloat(target);
-    const frame = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * num));
-      if (progress < 1) requestAnimationFrame(frame);
-      else setCount(num);
-    };
-    requestAnimationFrame(frame);
-  }, [start]);
-  return count;
-}
-
-function StatItem({ num, label }) {
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+    const t = setInterval(() => setIndex((i) => (i + 1) % slides.length), 4000);
+    return () => clearInterval(t);
   }, []);
 
-  const match = num.match(/^(\d+\.?\d*)(.*)$/);
-  const rawNum = match ? parseFloat(match[1]) : 0;
-  const suffix = match ? match[2] : '';
-  const isDecimal = String(rawNum).includes('.');
-
-  const counted = useCountUp(rawNum, 2000, started);
-  const display = started
-    ? (isDecimal ? counted.toFixed(1) : Math.floor(counted)) + suffix
-    : '0' + suffix;
+  const current = slides[index];
 
   return (
-   <div ref={ref} className="flex flex-1 items-center justify-center">
-  <div className="flex flex-col items-center gap-0.5">
-    <span className="text-[clamp(1rem,5vw,1.2rem)] font-semibold leading-none text-white">
-      {display}
-    </span>
+    <section className="relative h-screen min-h-[500px] overflow-hidden">
 
-    <span className="font-['DM_Sans'] text-[clamp(0.5rem,1.5vw,0.7rem)] uppercase tracking-[0.22em] text-white/70">
-      {label}
-    </span>
-  </div>
-</div>
-  );
-}
+      {/* Background Images — crossfade */}
+      <AnimatePresence>
+        <motion.div
+          key={current.bg}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0 bg-cover bg-[center_top] md:bg-center scale-100 md:scale-105"
+          style={{ backgroundImage: `url('${current.bg}')` }}
+        />
+      </AnimatePresence>
 
-export default function HeroSection() {
-  return (
-    <div className="min-h-screen overflow-hidden relative">
-      <Image
-        src="/hero.png"
-        alt="Hero background"
-        fill
-        priority
-        quality={85}
-        className="object-cover object-left md:object-center"
+      {/* Left Red Fade Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(105deg, rgba(120,0,0,0.92) 0%, rgba(160,10,10,0.78) 20%, rgba(180,20,20,0.5) 40%, rgba(140,0,0,0.18) 60%, transparent 75%)",
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black/20 to-black/70" />
 
-      <section className="relative flex flex-col items-left justify-center text-left px-4 sm:px-6 pt-28 md:pt-15 pb-16 min-h-screen">
-        <div className="flex flex-col items-left mb-20 md:mb-0  backdrop-blur-[1px] bg-black/20 rounded-3xl justify-evenly p-4 md:p-7 max-w-2xl">
+      {/* Bottom Dark Fade */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-          <motion.h1
-            className="max-w-3xl font-black leading-[1] tracking-tight text-4xl sm:text-5xl md:text-6xl text-[var(--text-primary)] drop-shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+      {/* Content */}
+      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col justify-center">
+        <div className="max-w-xl">
+
+          {/* Static top line */}
+          <motion.h2
+            initial={{ opacity: 0, x: -70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-white/70 uppercase font-light tracking-tight leading-none"
           >
-            <span>Explore </span><span className="text-red-500">India,</span>
-            <br />
-            <span className="text-white/70">Dhananjay Travels.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="mt-6"
-          >
-            <span className="max-w-xl text-[0.8rem] md:text-[1.1rem] leading-relaxed font-medium text-white/75">
-              Luxury tours, curated adventures, spiritual escapes, and unforgettable
-              group experiences designed by Dhananjay Travels.
+            <span className="block text-[3rem] lg:text-[3.5rem]">
+              BUILT FOR
             </span>
-          </motion.p>
+          </motion.h2>
+
+          {/* Flipping word */}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={current.word}
+                initial={{ rotateX: -90, opacity: 0 }}
+                animate={{ rotateX: 0,   opacity: 1 }}
+                exit={{    rotateX:  90, opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                style={{ transformOrigin: "center", display: "block" }}
+                className="text-white/80 font-black uppercase leading-none text-[3rem] lg:text-[5rem]"
+              >
+                {current.word}
+              </motion.span>
+            </AnimatePresence>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.42, ease: 'easeOut' }}
-            className="flex items-center justify-center w-full max-w-[440px] mt-7 pt-5 border-t border-white/10"
-          >
-            {stats.map((s, i) => (
-              <div key={s.label} className="flex items-center flex-1 justify-center">
-                <StatItem num={s.num} label={s.label} />
-                {i < stats.length - 1 && <div className="w-px h-9 bg-white/12 ml-4 flex-shrink-0" />}
-              </div>
+            initial={{ width: 0 }}
+            animate={{ width: "80px" }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="h-[3px] bg-white mt-3 mb-4"
+          />
+
+          {/* Subtitle fade */}
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={current.sub}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{    opacity: 0, y: -10 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="text-white/60 font-semibold tracking-wide text-xs sm:text-sm md:text-base lg:text-lg uppercase"
+            >
+              {current.sub}
+            </motion.p>
+          </AnimatePresence>
+
+          {/* Slide dots */}
+          <div className="flex gap-1.5 mt-4">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`h-1 rounded-full transition-all duration-500 ${
+                  i === index ? "w-6 bg-white" : "w-2 bg-white/40"
+                }`}
+              />
             ))}
-          </motion.div>
+          </div>
         </div>
 
-      </section>
-
-      <div className="absolute inset-y-3 inset-x-0 rounded-[32px] border border-[#caf0f8]/10 pointer-events-none" />
-
-      <div className="absolute bottom-[-20] left-0 w-full overflow-hidden leading-none" style={{ lineHeight: 0 }}>
-        <svg viewBox="0 0 1440 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full" style={{ height: "140px", display: "block" }}>
-          <defs>
-            <linearGradient id="waveGradient1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
-            </linearGradient>
-            <filter id="blur">
-              <feGaussianBlur stdDeviation="6" />
-            </filter>
-          </defs>
-          <path d="M0,95 C120,120 220,60 340,85 C460,110 560,150 700,120 C840,90 980,40 1120,70 C1260,100 1360,130 1440,95 L1440,180 L0,180 Z" fill="url(#waveGradient2)" filter="url(#blur)" />
-          <path d="M0,110 C140,70 280,150 420,110 C560,70 700,40 840,90 C980,140 1120,140 1260,100 C1340,78 1400,88 1440,95 L1440,180 L0,180 Z" fill="url(#waveGradient1)" />
-          <path d="M0,118 C140,80 280,155 420,118 C560,82 700,52 840,98 C980,144 1120,144 1260,108 C1340,90 1400,96 1440,102" stroke="rgba(200, 0, 0, 0.34)" strokeWidth="4" fill="none" strokeLinecap="round" />
-        </svg>
+        {/* Bottom Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-3xl"
+        >
+          <div className="border-t border-white/50 pt-2">
+            <div className="grid grid-cols-4">
+              {stats.map((item, i) => (
+                <div
+                  key={i}
+                  className={`text-center py-1.5 px-1 ${i !== stats.length - 1 ? "border-r border-white/30" : ""}`}
+                >
+                  <h3 className="text-white font-black text-base sm:text-xl md:text-2xl leading-none">
+                    <CountUp target={item.target} suffix={item.suffix} decimals={item.decimals || 0} />
+                    {item.title === "GOOGLE RATING" && (
+                      <Star className="inline-block ml-1 mb-0.5 fill-yellow-400 text-yellow-400" size={14} />
+                    )}
+                  </h3>
+                  <p className="text-white/80 text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-wider mt-0.5 leading-tight">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </div>
+
+      {/* Floating particles */}
+      <motion.div
+        animate={{ y: [0, -15, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute top-24 left-20 w-3 h-3 bg-white/40 rounded-full blur-sm"
+      />
+      <motion.div
+        animate={{ y: [0, 18, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+        className="absolute top-40 left-40 w-2 h-2 bg-white/30 rounded-full blur-sm"
+      />
+    </section>
   );
 }
