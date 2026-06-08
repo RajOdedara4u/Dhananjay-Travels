@@ -9,8 +9,7 @@ export default function AboutPage() {
   const heroRef = useRef(null);
 
   return (
-    <div className="  font-sans overflow-hidden">
-
+    <div className="    overflow-hidden">
       <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-top  opacity-100"
@@ -79,7 +78,7 @@ export default function AboutPage() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20    text-xs font-bold tracking-widest px-4 py-2 rounded-full "
           >
             <Sparkles className="text-[#C1121F]" size={12} />
-           What We Offer
+           Who We Are
           </motion.div>
         </div>
 

@@ -9,7 +9,7 @@ export default function ContactPage() {
   const heroRef = useRef(null);
 
   return (
-    <div className="font-sans overflow-hidden">
+    <div className=" overflow-hidden">
 
       <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
         <div
@@ -79,7 +79,7 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20    text-xs font-bold tracking-widest px-4 py-2 rounded-full "
           >
             <Sparkles className="text-[#C1121F]" size={12} />
-           What We Offer
+            Find Us
           </motion.div>
         </div>
 

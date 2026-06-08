@@ -18,7 +18,7 @@ export default function AboutCard() {
           <div className="flex-1">
             <h3 className="mt-3 text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] font-black text-black leading-tight">
               Vadodara's Trusted <br />
-              <span className="text-[var(--text-red)]">Bus Travel Partner</span>
+              <span className="text-[var(--text-red)]">Travel Partner</span>
             </h3>
 
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />

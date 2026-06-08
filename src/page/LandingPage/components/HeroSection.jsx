@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import Spinner from "@/components/Spinner";
 
 function useCountUp(target, decimals = 0, duration = 1500) {
   const [count, setCount] = useState(0);
@@ -51,18 +52,37 @@ export default function HeroSection() {
   ];
 
   const [index, setIndex] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    let count = 0;
+    slides.forEach(({ bg }) => {
+      const img = new Image();
+      img.src = bg;
+      img.onload = img.onerror = () => {
+        count++;
+        if (count === slides.length) setLoaded(true);
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!loaded) return;
     const t = setInterval(() => setIndex((i) => (i + 1) % slides.length), 4000);
     return () => clearInterval(t);
-  }, []);
+  }, [loaded]);
 
   const current = slides[index];
 
-  return (
-    <section className="relative h-screen min-h-[500px] overflow-hidden">
+  if (!loaded) {
+    return (
+          <Spinner />
+    );
+  }
 
-      {/* Background Images — crossfade */}
+  return (
+    <section className="relative h-[95vh] md:h-screen overflow-hidden bg-black">
+
       <AnimatePresence>
         <motion.div
           key={current.bg}
@@ -70,12 +90,12 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0 bg-cover bg-[center_top] md:bg-center scale-100 md:scale-105"
+          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat md:bg-cover md:bg-center md:scale-105"
           style={{ backgroundImage: `url('${current.bg}')` }}
         />
+
       </AnimatePresence>
 
-      {/* Left Red Fade Overlay */}
       <div
         className="absolute inset-0"
         style={{
@@ -84,26 +104,19 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Bottom Dark Fade */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-      {/* Content */}
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col justify-center">
         <div className="max-w-xl">
-
-          {/* Static top line */}
           <motion.h2
             initial={{ opacity: 0, x: -70 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="text-white/70 uppercase font-light tracking-tight leading-none"
           >
-            <span className="block text-[3rem] lg:text-[3.5rem]">
+            <span className="block text-[1.4rem] lg:text-[3.4rem]">
               BUILT FOR
             </span>
           </motion.h2>
-
-          {/* Flipping word */}
           <div className="overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
@@ -113,7 +126,7 @@ export default function HeroSection() {
                 exit={{    rotateX:  90, opacity: 0 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 style={{ transformOrigin: "center", display: "block" }}
-                className="text-white/80 font-black uppercase leading-none text-[3rem] lg:text-[5rem]"
+                className="text-white/80 font-black uppercase leading-none text-[3rem] lg:text-[4.9rem]"
               >
                 {current.word}
               </motion.span>
@@ -126,8 +139,6 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.6 }}
             className="h-[3px] bg-white mt-3 mb-4"
           />
-
-          {/* Subtitle fade */}
           <AnimatePresence mode="wait">
             <motion.p
               key={current.sub}
@@ -141,7 +152,6 @@ export default function HeroSection() {
             </motion.p>
           </AnimatePresence>
 
-          {/* Slide dots */}
           <div className="flex gap-1.5 mt-4">
             {slides.map((_, i) => (
               <button
@@ -155,7 +165,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Bottom Stats */}
         <motion.div
           initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
@@ -185,7 +194,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Floating particles */}
       <motion.div
         animate={{ y: [0, -15, 0] }}
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
