@@ -9,7 +9,7 @@ export default function AboutPage() {
   const heroRef = useRef(null);
 
   return (
-    <div className="    overflow-hidden">
+    <div className="bg-white overflow-hidden">
       <div className="relative text-white/80 flex items-center justify-center overflow-hidden pt-24 sm:pt-23">
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-top  opacity-100"

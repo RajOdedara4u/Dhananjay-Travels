@@ -105,7 +105,7 @@ function RightCard({ icon: Icon, title, index }) {
 
 export default function BusBenefitsSection() {
   return (
-    <section className="relative overflow-hidden py-7 max-w-[90%] mx-auto">
+    <section className="bg-white relative overflow-hidden py-7 max-w-[90%] mx-auto">
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-0">
 
           <div className="flex flex-col justify-between h-full gap-6 md:gap-12">
@@ -120,7 +120,7 @@ export default function BusBenefitsSection() {
               alt="Bus"
               width={500}
               height={1200}
-              className="w-[220px] md:w-[320px] lg:w-[420px] h-auto object-contain scale-[1.43] xl:scale-[1.63] -z-1"
+              className="w-[220px] md:w-[320px] lg:w-[420px] h-auto object-contain scale-[1.43] xl:scale-[1.63] z-1"
               priority
             />
           </div>

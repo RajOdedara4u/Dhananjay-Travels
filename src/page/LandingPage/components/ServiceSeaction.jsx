@@ -86,7 +86,7 @@ const services = [
 
 export default function ServiceSeaction() {
   return (
-    <section className="relative overflow-hidden py-7 max-w-[90%] mx-auto">
+    <section className="relative bg-white overflow-hidden py-7 max-w-[90%] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

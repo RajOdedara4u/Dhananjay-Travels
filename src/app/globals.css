@@ -12,13 +12,14 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background: white;
 }
 
 body {
-  background: var(--background-primary);
   color: var(--text-secondary);
   overflow-x: hidden;
   font-family: Helvetica, Arial, sans-serif;
+  background: white;
 }
 
 

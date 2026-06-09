@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import DotGrid from "./DotGrid"
+import DotGrid from "../../../components/DotGrid"
 
 const clients = [
   { src: "/C7.png", alt: "Client 1" },
@@ -22,7 +22,7 @@ export default function Crousel() {
   const [SIZE, setSIZE] = useState(350);
 
   useEffect(() => {
-    const update = () => setSIZE(window.innerWidth >= 768 ? 500 : 350);
+    const update = () => setSIZE(window.innerWidth >= 768 ? 500 : 340);
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
@@ -94,7 +94,7 @@ export default function Crousel() {
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative flex py-15 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
+    <section className="relative bg-white flex py-15 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
        <div className="relative flex flex-col items-center text-center gap-0 pb-7">
   <DotGrid />
   <div className="flex items-center gap-2 mb-0 pb-2 md:pb-0">

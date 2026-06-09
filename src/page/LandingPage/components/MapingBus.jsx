@@ -73,7 +73,7 @@ export default function MapingBus() {
   }, [activeId]);
 
   return (
-    <section className="w-full pb-8 overflow-hidden">
+    <section className="w-full bg-white pb-8 overflow-hidden">
       <div className="max-w-5xl mx-auto md:px-4">
 
         <div className="flex items-center justify-center gap-1.5 md:gap-2 flex-wrap mb-5">

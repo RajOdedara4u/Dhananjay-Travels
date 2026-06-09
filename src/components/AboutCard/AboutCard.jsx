@@ -64,7 +64,7 @@ export default function AboutCard() {
 
               <div className="grid grid-cols-2 gap-3" style={{ gridTemplateRows: "160px 130px" }}>
                 <div className="relative overflow-hidden shadow-lg border-2 border-[var(--border-color)] z-10" style={{ borderRadius: "2rem 0.5rem 2rem 0.5rem" }}>
-                  <Image src="/background.png" alt="Fleet" fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                  <Image src="/img3.png" alt="Fleet" fill className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="relative row-span-2 z-10 overflow-hidden shadow-xl border-2 border-[var(--border-color)]" style={{ borderRadius: "0.5rem 2.5rem 0.5rem 2.5rem" }}>
                   <Image src="/img1.png" alt="Journey" fill className="object-cover hover:scale-105 transition-transform duration-500" />

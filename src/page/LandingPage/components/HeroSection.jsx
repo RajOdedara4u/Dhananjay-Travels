@@ -3,7 +3,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import Spinner from "@/components/Spinner";
 
 function useCountUp(target, decimals = 0, duration = 1500) {
   const [count, setCount] = useState(0);
@@ -45,55 +44,49 @@ const slides = [
 
 export default function HeroSection() {
   const stats = [
-    { target: 10,  suffix: "+", title: "YEARS SERVING CORPORATES"},
-    { target: 50,  suffix: "+", title: "BUSES IN FLEET"},
-    { target: 4.9, suffix: "",  decimals: 1, title: "GOOGLE RATING"},
-    { target: 200, suffix: "+", title: "COMPANIES TRUST US"},
+    { target: 10,  suffix: "+", title: "YEARS SERVING CORPORATES" },
+    { target: 50,  suffix: "+", title: "BUSES IN FLEET" },
+    { target: 4.9, suffix: "",  decimals: 1, title: "GOOGLE RATING" },
+    { target: 200, suffix: "+", title: "COMPANIES TRUST US" },
   ];
 
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    let count = 0;
-    slides.forEach(({ bg }) => {
-      const img = new Image();
-      img.src = bg;
-      img.onload = img.onerror = () => {
-        count++;
-        if (count === slides.length) setLoaded(true);
-      };
-    });
+    const first = new window.Image();
+    first.src = slides[0].bg;
+    first.onload = first.onerror = () => {
+      setLoaded(true);
+      slides.slice(1).forEach(({ bg }) => {
+        const img = new window.Image();
+        img.src = bg;
+      });
+    };
   }, []);
 
   useEffect(() => {
-    if (!loaded) return;
     const t = setInterval(() => setIndex((i) => (i + 1) % slides.length), 4000);
     return () => clearInterval(t);
-  }, [loaded]);
+  }, []);
 
   const current = slides[index];
 
-  if (!loaded) {
-    return (
-          <Spinner />
-    );
-  }
-
   return (
-    <section className="relative h-[95vh] md:h-screen overflow-hidden bg-black">
+    <section className="relative h-[95vh] md:h-screen overflow-hidden bg-white">
 
       <AnimatePresence>
-        <motion.div
-          key={current.bg}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat md:bg-cover md:bg-center md:scale-105"
-          style={{ backgroundImage: `url('${current.bg}')` }}
-        />
-
+        {loaded && (
+          <motion.div
+            key={current.bg}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url('${current.bg}')` }}
+          />
+        )}
       </AnimatePresence>
 
       <div
@@ -105,6 +98,7 @@ export default function HeroSection() {
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
       <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col justify-center">
         <div className="max-w-xl">
           <motion.h2
@@ -117,6 +111,7 @@ export default function HeroSection() {
               BUILT FOR
             </span>
           </motion.h2>
+
           <div className="overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
@@ -139,6 +134,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.6 }}
             className="h-[3px] bg-white mt-3 mb-4"
           />
+
           <AnimatePresence mode="wait">
             <motion.p
               key={current.sub}

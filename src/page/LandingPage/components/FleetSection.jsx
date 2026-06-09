@@ -5,7 +5,7 @@ import MapingBus from "./MapingBus";
 
 export default function FleetSection() {
   return (
-    <section className="py-7 max-w-[90%] mx-auto">
+    <section className="py-7 bg-white max-w-[90%] mx-auto">
         <motion.div
           className="text-center mb-7 md:mb-4 px-4"
           initial={{ opacity: 0, y: 30 }}
