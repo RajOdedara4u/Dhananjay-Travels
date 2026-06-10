@@ -38,16 +38,16 @@ const slides = [
   { bg: "/bg3.png", word: "BUSINESS",   sub: "WE MOVE YOUR BUSINESS FORWARD" },
   { bg: "/bg2.png", word: "EXCELLENCE", sub: "DELIVERING EXCELLENCE ON EVERY ROUTE" },
   { bg: "/bg4.png", word: "ENTERPRISE", sub: "TRUSTED BY LEADING ENTERPRISES" },
-  { bg: "/bg1.png", word: "CORPORATE",  sub: "PREMIUM CORPORATE TRAVEL SOLUTIONS" },
   { bg: "/bg5.png", word: "JOURNEYS",   sub: "CRAFTING SEAMLESS JOURNEYS DAILY" },
+  { bg: "/bg1.png", word: "CORPORATE",  sub: "PREMIUM CORPORATE TRAVEL SOLUTIONS" },
 ];
 
 export default function HeroSection() {
   const stats = [
     { target: 10,  suffix: "+", title: "YEARS SERVING CORPORATES" },
-    { target: 50,  suffix: "+", title: "BUSES IN FLEET" },
+    { target: 20,  suffix: "+", title: "BUSES IN FLEET" },
     { target: 4.9, suffix: "",  decimals: 1, title: "GOOGLE RATING" },
-    { target: 200, suffix: "+", title: "COMPANIES TRUST US" },
+    { target: 10, suffix: "+", title: "COMPANIES TRUST US" },
   ];
 
   const [index, setIndex] = useState(0);
@@ -83,7 +83,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-top bg-right"
             style={{ backgroundImage: `url('${current.bg}')` }}
           />
         )}
