@@ -36,10 +36,8 @@ function CountUp({ target, suffix = "", decimals = 0 }) {
 
 const slides = [
   { bg: "/bg3.png", word: "BUSINESS",   sub: "WE MOVE YOUR BUSINESS FORWARD" },
-  { bg: "/bg2.png", word: "EXCELLENCE", sub: "DELIVERING EXCELLENCE ON EVERY ROUTE" },
-  { bg: "/bg4.png", word: "ENTERPRISE", sub: "TRUSTED BY LEADING ENTERPRISES" },
-  { bg: "/bg5.png", word: "JOURNEYS",   sub: "CRAFTING SEAMLESS JOURNEYS DAILY" },
   { bg: "/bg1.png", word: "CORPORATE",  sub: "PREMIUM CORPORATE TRAVEL SOLUTIONS" },
+  { bg: "/bg4.png", word: "ENTERPRISE", sub: "TRUSTED BY LEADING ENTERPRISES" },
 ];
 
 export default function HeroSection() {
