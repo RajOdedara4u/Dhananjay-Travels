@@ -12,7 +12,8 @@ const clients = [
   { src: "/C4.png", alt: "Client 4" },
   { src: "/C5.png", alt: "Client 5" },
   { src: "/C6.png", alt: "Client 6" },
-  { src: "/C1.png", alt: "Client 7" },
+  { src: "/C8.jpeg", alt: "Client 8" },
+  { src: "/C2.png", alt: "Client 7" },
 ];
 
 export default function Crousel() {
@@ -94,7 +95,7 @@ export default function Crousel() {
   const scale = `min(${SIZE}px, 90vw)`;
 
   return (
-    <section className="relative bg-white flex py-15 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
+    <section className="relative bg-white flex pt-15 flex-col items-center overflow-hidden max-w-[100%] mx-auto">
        <div className="relative flex flex-col items-center text-center gap-0 pb-7">
   <DotGrid />
   <div className="flex items-center gap-2 mb-0 pb-2 md:pb-0">

@@ -110,13 +110,13 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <a href="mailto:info@dhananjaytravels.com" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[#E9D8C4] hover:border-[#C1121F]/40 hover:bg-[#FFF8EE] transition-all duration-200 group shadow-sm">
+              <a href="mailto:dhananjaytravelsvadodara@gmail.com" className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[#E9D8C4] hover:border-[#C1121F]/40 hover:bg-[#FFF8EE] transition-all duration-200 group shadow-sm">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border border-[#E9D8C4] group-hover:bg-[#C1121F] group-hover:border-[#C1121F] transition-all duration-200" style={{ background: "rgba(193,18,31,0.08)" }}>
                   <Mail size={16} className="text-[#C1121F] group-hover:text-white transition-colors duration-200" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold tracking-widest uppercase text-[#C1121F]">Email Us</p>
-                  <p className="text-[#1D1D1D] font-semibold text-sm">info@dhananjaytravels.com</p>
+                  <p className="text-[#1D1D1D] font-semibold text-sm">dhananjaytravelsvadodara@gmail.com</p>
                 </div>
               </a>
 

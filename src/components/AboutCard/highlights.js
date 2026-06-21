@@ -1,6 +1,6 @@
 export const highlights = [
-  "50+ well-maintained AC & Non-AC buses",
-  "Experienced, licensed & courteous drivers",
-  "GPS-tracked fleet for safety",
-  "Trusted by 200+ corporate clients",
+  "Reliable employee transportation solutions",
+  "Modern AC & Non-AC fleet for all workforce sizes",
+  "Experienced drivers with a strong safety record",
+  "On-time pick-up & drop services across Gujarat",
 ];

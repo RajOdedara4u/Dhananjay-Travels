@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { highlights } from "./highlights";
@@ -24,11 +24,11 @@ export default function AboutCard() {
             <div  className="h-1 w-10 bg-[#C1121F] rounded-full mt-4 mb-4" />
 
             <p className="text-[var(--text-secondary)] text-[0.8rem] md:text-[0.9rem] leading-relaxed">
-              Dhananjay Travels is a Vadodara-based travel agency specialising in premium bus services across Gujarat and India. Founded with a passion for safe, comfortable, and reliable journeys, we have grown into one of the most trusted names in group travel, corporate transportation, and pilgrimage tours.
-            </p>
+Dhananjay Travels is a Vadodara-based employee transportation company providing reliable staff transport solutions for businesses across Gujarat and India.
+   </p>
             <p className="mt-3 text-[var(--text-secondary)] text-[0.8rem] md:text-[0.9rem] leading-relaxed">
-              From our base at Waghodia Road, Vadodara, we operate a modern fleet of AC and Non-AC buses — ranging from 20-seat luxury coaches to 56-seat sleeper buses — serving thousands of happy travellers every year.
-            </p>
+We specialize in daily employee commuting, factory staff transportation, shift-based pick-up and drop services, and long-term corporate transportation contracts. Backed by a modern fleet, experienced drivers, and a commitment to safety and punctuality, we help organizations ensure seamless workforce mobility every day.
+</p>
 
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {highlights.map((h) => (

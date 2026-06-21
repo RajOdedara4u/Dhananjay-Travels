@@ -10,16 +10,18 @@ const AboutCard      = dynamic(() => import("@/components/AboutCard/AboutCard"),
 const BusBenefits    = dynamic(() => import("./components/BusBenefitsSection"),    { loading: () => fallback });
 const TrackDivider   = dynamic(() => import("../../components/TrackDivider"),      { loading: () => fallback });
 const FleetSection   = dynamic(() => import("./components/FleetSection"),          { loading: () => fallback });
+const CompanySaves   = dynamic(() => import("./components/CompanySaves"),           { loading: () => fallback });
 import CTA from "@/components/CTA";
 export default function LandingPage() {
   return (
     <div className="bg-white">
       <HeroSection />
       <Carousel />
+      <CompanySaves />
       <AboutCard />
+      <BusBenefits />
       <TrackDivider />
       <FleetSection />
-      <BusBenefits />
       <CTA />
     </div>
   );

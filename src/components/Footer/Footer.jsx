@@ -147,7 +147,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              <a href="mailto:info@dhananjaytravels.com" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+              <a href="mailto:dhananjaytravelsvadodara@gmail.com" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
                 <div style={{
                   width: 32, height: 32, borderRadius: 8, flexShrink: 0,
                   background: "#fff0f0", border: "1px solid #f3b2b9",
@@ -156,7 +156,7 @@ export default function Footer() {
                   <Mail size={13} color="#C1121F" />
                 </div>
                 <p style={{ fontSize: 12, color: "#5F5F5F", lineHeight: 1.3 }}>
-                  info@dhananjaytravels.com
+                  dhananjaytravelsvadodara@gmail.com
                 </p>
               </a>
 
