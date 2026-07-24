@@ -38,7 +38,7 @@ export default function ServiceCard({ service, index, total = 6 }) {
       <div
         style={{
           position: "relative",
-          height: 140,
+          height: 110,
           borderRadius: "16px 16px 0 0",
           overflow: "hidden",
           flexShrink: 0,
@@ -59,14 +59,14 @@ export default function ServiceCard({ service, index, total = 6 }) {
             bottom: 0,
             left: 0,
             right: 0,
-            height: 70,
+            height: 55,
             background:
               "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 50%, transparent 100%)",
           }}
         />
 
       <span
-  className="absolute top-[10px] left-3 text-[9px] tracking-[0.16em] uppercase text-[var(--text-primary)] bg-[#C1121F] border border-[rgba(196,168,130,0.55)] px-2 py-[3px] rounded-full font-medium"
+  className="absolute top-[8px] left-2 text-[8px] tracking-[0.16em] uppercase text-[var(--text-primary)] bg-[#C1121F] border border-[rgba(196,168,130,0.55)] px-2 py-[2px] rounded-full font-medium"
 >
           {service.tag}
         </span>
@@ -75,18 +75,18 @@ export default function ServiceCard({ service, index, total = 6 }) {
   transition={{ type: "spring", stiffness: 320, damping: 22 }}
   className={`
     absolute left-1/2 -translate-x-1/2
-    w-20 h-10 py-3 rounded-b-full bg-white
+    w-16 h-8 py-2 rounded-b-full bg-white
     flex items-center justify-center z-10
     transition-all duration-300
     ${
       hovered
-        ? "border-b-[2.5px] border-b-[#C1121F] shadow-[0_6px_20px_rgba(193,18,31,0.22)]"
-        : "border-b-[2.5px] border-b-[#f1b5ba] shadow-[0_4px_14px_rgba(193,18,31,0.14)]"
+        ? "border-b-[2px] border-b-[#C1121F] shadow-[0_4px_14px_rgba(193,18,31,0.22)]"
+        : "border-b-[2px] border-b-[#f1b5ba] shadow-[0_3px_10px_rgba(193,18,31,0.14)]"
     }
   `}
 >
   <Icon
-    size={20}
+    size={15}
     color={hovered ? "#C1121F" : "#d14a55"}
     strokeWidth={1.7}
   />
@@ -95,7 +95,7 @@ export default function ServiceCard({ service, index, total = 6 }) {
 
       <div
         style={{
-          padding: "36px 18px 18px", 
+          padding: "28px 14px 14px",
           display: "flex",
           flexDirection: "column",
           flex: 1,
@@ -103,21 +103,21 @@ export default function ServiceCard({ service, index, total = 6 }) {
       >
      
       <h3
-  className="text-[18px] font-bold text-black leading-[1.2] mb-[7px]"
+  className="text-[15px] font-bold text-black leading-[1.2] mb-[5px]"
 >
   {service.title}
 </h3>
 
-<p className="text-[11.5px] text-black/80 leading-[1.6] font-light mb-[14px]">
+<p className="text-[10px] text-black/80 leading-[1.5] font-light mb-[10px]">
   {service.short}
 </p>
 <div className="w-8 h-[1.5px]  rounded-sm mb-3" />
 
-   <ul className="list-none p-0 grid grid-cols-2 gap-y-[5px] gap-x-2 mb-4 flex-1">
+   <ul className="list-none p-0 grid grid-cols-2 gap-y-[4px] gap-x-2 mb-3 flex-1">
   {service.features.map((f) => (
     <li
       key={f}
-      className="flex items-center gap-[5px] text-[10.5px] text-black/80"
+      className="flex items-center gap-[5px] text-[9.5px] text-black/80"
     >
       <span className="w-[3px] h-[3px] rounded-full bg-[#C1121F] flex-shrink-0" />
       {f}
@@ -127,14 +127,14 @@ export default function ServiceCard({ service, index, total = 6 }) {
 <WaveDivider />
 
     <div className="flex items-center justify-between ">
-  <span className="text-[10px] font-medium  tracking-[0.12em] uppercase text-[var(--text-red)]">
+  <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-[var(--text-red)]">
     Explore
   </span>
 
   <motion.div
     animate={hovered ? { rotate: 0, scale: 1.05 } : { rotate: 0, scale: 1 }}
     className={`
-      w-7 h-7 rounded-full flex items-center justify-center
+      w-6 h-6 rounded-full flex items-center justify-center
       transition-all duration-300
       ${
         hovered
@@ -144,7 +144,7 @@ export default function ServiceCard({ service, index, total = 6 }) {
     `}
   >
     <ArrowUpRight
-      size={13}
+      size={11}
       color={hovered ? "#fff" : "#C1121F"}
       strokeWidth={2}
     />

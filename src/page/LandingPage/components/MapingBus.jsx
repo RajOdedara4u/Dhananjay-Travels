@@ -73,10 +73,10 @@ export default function MapingBus() {
   }, [activeId]);
 
   return (
-    <section className="w-full bg-white pb-8 overflow-hidden">
-      <div className="max-w-5xl mx-auto md:px-4">
+    <section className="w-full bg-white pb-8">
+      <div className="w-full">
 
-        <div className="flex items-center justify-center gap-1.5 md:gap-2 flex-wrap mb-5">
+        <div className="relative z-10 flex items-center justify-center gap-1.5 md:gap-2 flex-wrap mb-5">
           {buses.map((bus) => {
             const Icon = bus.icon;
             const isActive = activeId === bus.id;

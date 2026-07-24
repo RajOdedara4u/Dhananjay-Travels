@@ -20,11 +20,11 @@ export default function CTA() {
             <div className="relative z-10 h-full flex flex-row items-center justify-between px-4 sm:px-6 md:px-10 gap-3">
               <div className="hidden sm:block max-w-xl text-white">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-tight">
-                  Travel Without Limits
+                  Trusted Bus Partner
                 </h2>
                 <p className="mt-1 text-white/90 text-[10px] sm:text-xs md:text-sm max-w-md">
-                  Premium bus rentals for corporate, group travel,
-                  weddings, events and outstation journeys across India.
+                  Reliable, on-time, daily shuttles & office commutes  outstation
+                  business trips across India.
                 </p>
               </div>
 
@@ -34,13 +34,14 @@ export default function CTA() {
                     <div className="bg-white rounded-[10px] sm:rounded-[14px] p-1.5 sm:p-2.5 flex-1 sm:min-w-[220px] md:min-w-[280px]">
                       <div className="flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-xs font-semibold text-gray-700">
                         <Bus size={9} className="sm:w-3 sm:h-3" />
-                        <span>Your Journey</span>
+                        <span>Corporate Bus Enquiry</span>
                       </div>
                       <div className="mt-1 sm:mt-2">
                         <input
                           type="text"
-                          placeholder="Tell us your destination"
-                          className="w-full bg-gray-100 rounded-full px-2 sm:px-3 py-1 sm:py-1.5 text-[9px] sm:text-xs outline-none"
+                          disabled
+                          placeholder="Call us to discuss your route"
+                          className="w-full bg-gray-100 rounded-full px-2 sm:px-3 py-1 sm:py-1.5 text-[9px] sm:text-xs outline-none cursor-not-allowed text-gray-400"
                         />
                       </div>
                     </div>
